@@ -131,5 +131,25 @@ export default {
 			name: 'readyInMinutes',
 			type: 'number'
 		},
+		{
+			title: 'Vegetarian',
+			name: 'vegetarian',
+			type: 'boolean'
+		},
+		{
+			title: 'Vegan',
+			name: 'vegan',
+			type: 'boolean',
+		},
+		{
+			title: 'Gluten free',
+			name: 'glutenFree',
+			type: 'boolean'
+		},
+		{
+			title: 'Dairy Free',
+			name: 'dairyFree',
+			type: 'boolean'
+		}
 	]
 }
