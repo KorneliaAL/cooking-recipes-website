@@ -15,6 +15,16 @@ export default {
 			options: {
 				source: 'name'
 			}
+		},
+		{
+			title: 'Description',
+			name: 'description',
+			type: 'text'
+		},
+		{
+			title: 'Image',
+			name: 'image',
+			type: 'image'
 		}
 	]
 }
