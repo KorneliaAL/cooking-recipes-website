@@ -167,6 +167,28 @@ export default {
 					type: 'string'
 				}
 			]
+		},
+		{
+			title: 'Category',
+			name: 'category',
+			type: 'reference',
+			to: {
+				type: 'category'
+			}
+		},
+		{
+			title: 'Cuisines',
+			name: 'cuisines',
+			type: 'array',
+			of: [
+				{
+					type: 'reference',
+					to: {
+						type: 'cuisine'
+					}
+				}
+			]
 		}
+
 	]
 }
