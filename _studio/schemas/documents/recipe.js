@@ -150,6 +150,23 @@ export default {
 			title: 'Dairy Free',
 			name: 'dairyFree',
 			type: 'boolean'
+		},
+		{
+			title: 'Calories',
+			name: 'calories',
+			type: 'object',
+			fields: [
+				{
+					title: 'Amount',
+					name: 'amount',
+					type: 'number'
+				},
+				{
+					title: 'Unit',
+					name: 'unit',
+					type: 'string'
+				}
+			]
 		}
 	]
 }
