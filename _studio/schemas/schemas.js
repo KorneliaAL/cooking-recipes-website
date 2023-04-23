@@ -1,4 +1,8 @@
-import recipe from "./documents/recipe.js"
+import recipe from "./documents/recipe.js";
+import category from "./documents/category.js";
+import cuisine from "./documents/cuisine.js";
 export default [
-	recipe
+	recipe,
+	category,
+	cuisine
 ]
