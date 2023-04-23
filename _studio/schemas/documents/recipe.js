@@ -125,6 +125,11 @@ export default {
 					]
 				}
 			]
-		}
+		},
+		{
+			title: 'Ready in minutes',
+			name: 'readyInMinutes',
+			type: 'number'
+		},
 	]
 }
