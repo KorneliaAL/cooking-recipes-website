@@ -1,6 +1,6 @@
 export default {
 	title: 'Cooking recipes',
-	name: 'cooking-recipes',
+	name: 'cookingRecipes',
 	type: 'document',
 	fields: [
 		{
@@ -25,6 +25,84 @@ export default {
 			title: 'Image',
 			name: 'image',
 			type: 'image'
+		},
+		{
+			title: 'Ingredients',
+			name: 'ingredients',
+			type: 'array',
+			of: [
+				{
+					type: 'object',
+					fields: [
+						{
+							title: 'Name',
+							name: 'name',
+							type: 'string'
+						},
+						{
+							title: 'Amount',
+							name: 'amount',
+							type: 'number'
+						},
+						{
+							title: 'Unit',
+							name: 'unit',
+							type: 'string'
+						},
+						{
+							title: 'Measures',
+							name: 'measures',
+							type: 'object',
+							fields: [
+								{
+									title: 'Metric',
+									name: 'metric',
+									type: 'object',
+									fields: [
+										{
+											title: 'Amount',
+											name: 'amount',
+											type: 'number'
+										},
+										{
+											title: 'Unit Long',
+											name: 'unitLong',
+											type: 'string'
+										},
+										{
+											title: 'Unit Short',
+											name: 'unitShort',
+											type: 'string'
+										}
+									]
+								},
+								{
+									title: 'Us',
+									name: 'us',
+									type: 'object',
+									fields: [
+										{
+											title: 'Amount',
+											name: 'amount',
+											type: 'number'
+										},
+										{
+											title: 'Unit Long',
+											name: 'unitLong',
+											type: 'string'
+										},
+										{
+											title: 'Unit Short',
+											name: 'unitShort',
+											type: 'string'
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	]
 }
