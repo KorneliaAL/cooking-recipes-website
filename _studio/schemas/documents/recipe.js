@@ -103,6 +103,28 @@ export default {
 					]
 				}
 			]
+		},
+		{
+			title: 'Instructions',
+			name: 'instructions',
+			type: 'array',
+			of: [
+				{
+					type: 'object',
+					fields: [
+						{
+							title: 'Number',
+							name: 'number',
+							type: 'number'
+						},
+						{
+							title: 'Step',
+							name: 'step',
+							type: 'text'
+						}
+					]
+				}
+			]
 		}
 	]
 }
