@@ -27,6 +27,11 @@ export default {
 			type: 'image'
 		},
 		{
+			title: 'Servings',
+			name: 'servings',
+			type: 'number'
+		},
+		{
 			title: 'Ingredients',
 			name: 'ingredients',
 			type: 'array',
@@ -100,7 +105,20 @@ export default {
 								}
 							]
 						}
-					]
+					],
+					preview: {
+						select: {
+							name: 'name',
+							amount: 'amount',
+							unit: 'unit'
+						},
+						prepare: (fields) => {
+							return {
+								title: `${fields.name}`,
+								subtitle: `${fields.amount} ${fields.unit} `
+							}
+						}
+					}
 				}
 			]
 		},
