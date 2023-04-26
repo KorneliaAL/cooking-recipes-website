@@ -14,4 +14,10 @@
 	--border-radius-button: 0.5rem;
 	--border-radius-card: 0.5rem;
 	--border-radius-image-button: 100%;
+
+	--gap-column: 0.5rem;
+	--gap-padding: 1rem;
+	--gap-list-margin: 0.5rem;
+	--gap-large: 4rem;
+	--gap-medium: 2rem;
 }
