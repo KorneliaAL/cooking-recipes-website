@@ -10,4 +10,8 @@
 	--color-main-font: var(--color-03);
 	--color-box-foreground: var(--color-01);
 	--color-background: var(--color-06);
+
+	--border-radius-button: 0.5rem;
+	--border-radius-card: 0.5rem;
+	--border-radius-image-button: 100%;
 }
