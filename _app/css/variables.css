@@ -1,0 +1,13 @@
+:root {
+	--color-01: #FF642F;
+	--color-02: #FFD7C9;
+	--color-03: #000000;
+	--color-04: #7F7F7F;
+	--color-05: #E8E8E8;
+	--color-06: #f9f9f9;
+
+	--color-button: var(--color-01);
+	--color-main-font: var(--color-03);
+	--color-box-foreground: var(--color-01);
+	--color-background: var(--color-06);
+}
