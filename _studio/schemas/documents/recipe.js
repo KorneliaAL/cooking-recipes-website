@@ -32,8 +32,8 @@ export default {
 			type: 'number'
 		},
 		{
-			title: 'Ingredients',
-			name: 'ingredients',
+			title: 'Ingredients List',
+			name: 'ingredientList',
 			type: 'array',
 			of: [
 				{
@@ -45,80 +45,97 @@ export default {
 							type: 'string'
 						},
 						{
-							title: 'Amount',
-							name: 'amount',
-							type: 'number'
-						},
-						{
-							title: 'Unit',
-							name: 'unit',
-							type: 'string'
-						},
-						{
-							title: 'Measures',
-							name: 'measures',
-							type: 'object',
-							fields: [
+							title: 'Ingredients',
+							name: 'ingredients',
+							type: 'array',
+							of: [
 								{
-									title: 'Metric',
-									name: 'metric',
 									type: 'object',
 									fields: [
+										{
+											title: 'Name',
+											name: 'name',
+											type: 'string'
+										},
 										{
 											title: 'Amount',
 											name: 'amount',
 											type: 'number'
 										},
 										{
-											title: 'Unit Long',
-											name: 'unitLong',
+											title: 'Unit',
+											name: 'unit',
 											type: 'string'
 										},
 										{
-											title: 'Unit Short',
-											name: 'unitShort',
-											type: 'string'
+											title: 'Measures',
+											name: 'measures',
+											type: 'object',
+											fields: [
+												{
+													title: 'Metric',
+													name: 'metric',
+													type: 'object',
+													fields: [
+														{
+															title: 'Amount',
+															name: 'amount',
+															type: 'number'
+														},
+														{
+															title: 'Unit Long',
+															name: 'unitLong',
+															type: 'string'
+														},
+														{
+															title: 'Unit Short',
+															name: 'unitShort',
+															type: 'string'
+														}
+													]
+												},
+												{
+													title: 'Us',
+													name: 'us',
+													type: 'object',
+													fields: [
+														{
+															title: 'Amount',
+															name: 'amount',
+															type: 'number'
+														},
+														{
+															title: 'Unit Long',
+															name: 'unitLong',
+															type: 'string'
+														},
+														{
+															title: 'Unit Short',
+															name: 'unitShort',
+															type: 'string'
+														}
+													]
+												}
+											]
 										}
-									]
-								},
-								{
-									title: 'Us',
-									name: 'us',
-									type: 'object',
-									fields: [
-										{
-											title: 'Amount',
-											name: 'amount',
-											type: 'number'
+									],
+									preview: {
+										select: {
+											name: 'name',
+											amount: 'amount',
+											unit: 'unit'
 										},
-										{
-											title: 'Unit Long',
-											name: 'unitLong',
-											type: 'string'
-										},
-										{
-											title: 'Unit Short',
-											name: 'unitShort',
-											type: 'string'
+										prepare: (fields) => {
+											return {
+												title: `${fields.name}`,
+												subtitle: `${fields.amount} ${fields.unit}`
+											}
 										}
-									]
+									}
 								}
 							]
 						}
-					],
-					preview: {
-						select: {
-							name: 'name',
-							amount: 'amount',
-							unit: 'unit'
-						},
-						prepare: (fields) => {
-							return {
-								title: `${fields.name}`,
-								subtitle: `${fields.amount} ${fields.unit} `
-							}
-						}
-					}
+					]
 				}
 			]
 		},
@@ -210,3 +227,4 @@ export default {
 
 	]
 }
+
