@@ -1,0 +1,34 @@
+:root {
+
+	/* Color variables */
+	--color-01: #FF642F;
+	--color-02: #FFD7C9;
+	--color-03: #000000;
+	--color-04: #7F7F7F;
+	--color-05: #E8E8E8;
+	--color-06: #f9f9f9;
+
+	--color-button: var(--color-01);
+	--color-main-font: var(--color-03);
+	--color-box-foreground: var(--color-01);
+	--color-background: var(--color-06);
+
+	/* Border variables */
+	--border-radius-button: 0.5rem;
+	--border-radius-card: 0.5rem;
+	--border-radius-image-button: 100%;
+
+	/* Gap variables */
+	--gap-column: 0.5rem;
+	--gap-padding: 1rem;
+	--gap-list-margin: 0.5rem;
+	--gap-large: 4rem;
+	--gap-medium: 2rem;
+
+	/* Font variables */
+	--font-size-main-header-desktop: 3.2rem;
+	--font-size-main-header-mobile: 1.8rem;
+	--font-size-main-body-desktop: 1rem;
+	--font-size-sub-header-desktop: 2rem;
+	--font-size-sub-header-mobile: 1.4rem;
+}
