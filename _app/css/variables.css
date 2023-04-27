@@ -1,4 +1,7 @@
 :root {
+
+	/* Color variables */
+
 	--color-01: #FF642F;
 	--color-02: #FFD7C9;
 	--color-03: #000000;
@@ -11,10 +14,12 @@
 	--color-box-foreground: var(--color-01);
 	--color-background: var(--color-06);
 
+	/* Border variables */
 	--border-radius-button: 0.5rem;
 	--border-radius-card: 0.5rem;
 	--border-radius-image-button: 100%;
 
+	/* Gap variables */
 	--gap-column: 0.5rem;
 	--gap-padding: 1rem;
 	--gap-list-margin: 0.5rem;
