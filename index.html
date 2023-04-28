@@ -8,27 +8,29 @@
 		<title>Recipes</title>
 	</head>
 	<body>
-		<header class="grid">
-			<nav class="grid grid__column--12 main-navigation">
-				<h1 class="grid__column--2 grid-column-start--2">YumDish</h1>
-				<ul class="main-navigation__links-list grid__column--9">
+		<header class="main-header">
+			<div class="main-header__content">
+				<h1>YumDish</h1>
+				<div class="main-header__mobile-buttons">
+					<button class="main-header__mobile-search-button"></button>
+					<button class="main-header__mobile-burger-button"></button>
+				</div>
+			</div>
+			<nav class="main-header__navigation">
+				<menu class="main-header__menu">
 					<li>
-						<a href="#" class="main-navigation__link">Home</a>
+						<a href="#" class="main-header__link">Home</a>
 					</li>
 					<li>
-						<a href="#" class="main-navigation__link">Recipes</a>
+						<a href="#" class="main-header__link">Recipes</a>
 					</li>
 					<li>
-						<a href="#" class="main-navigation__link">Favorites</a>
+						<a href="#" class="main-header__link">Favorites</a>
 					</li>
 					<li>
-						<button class="main-navigation__search-button"></button>
+						<button class="main-header__search-button"></button>
 					</li>
-				</ul>
-				<ul class="main-navigation__mobile grid__column--3 grid-column-start--10">
-					<button class="main-navigation__search-button"></button>
-					<button class="main-navigation__mobile-burger-button"></button>
-				</ul>
+				</menu>
 			</nav>
 		</header>
 	</body>
