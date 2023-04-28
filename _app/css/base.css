@@ -3,3 +3,7 @@ body {
 	font-family: 'Inter', sans-serif;
 	color: var(--color-03);
 }
+
+h1 {
+	font-family: 'Playfair Display', serif;
+}
