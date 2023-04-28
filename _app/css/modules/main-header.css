@@ -1,8 +1,31 @@
+header {
+	background-color: var(--color-box-foreground);
+	height: 10rem;
+	justify-content: space-between;
+}
+
 .main-navigation {
-.main-navigation__search-button, .main-navigation__mobile-burger-button{
+	align-items: center;
+	justify-content: space-between;
+	
+}
+
+.main-navigation__links-list {
+	display: none;
+}
+
+.main-navigation__mobile {
+	display: flex;
+	gap: var(--gap-medium);
+	justify-content: center;
+}
+
+.main-navigation__search-button,
+.main-navigation__mobile-burger-button {
 	width: 1.4rem;
 	height: 1.4rem;
 }
+
 .main-navigation__mobile-burger-button {
 	background-image: url(/_app/assets/icons/menu.svg);	
 }
