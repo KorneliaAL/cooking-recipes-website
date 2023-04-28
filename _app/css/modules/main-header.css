@@ -1,48 +1,75 @@
-header {
+.main-header {
 	background-color: var(--color-box-foreground);
-	height: 10rem;
-	justify-content: space-between;
+	padding: 1.5rem;
 }
 
-.main-navigation {
+.main-header--visible {
+	height: 100vh;
+}
+
+.main-header__content {
+	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	
+	padding: var(--gap-margin);
 }
 
-.main-navigation__links-list {
-	display: none;
-}
-
-.main-navigation__mobile {
-	display: flex;
-	gap: var(--gap-medium);
-	justify-content: center;
-}
-
-.main-navigation__search-button,
-.main-navigation__mobile-burger-button {
+.main-header__search-button,
+.main-header__mobile-burger-button, .main-header__mobile-search-button {
 	width: 1.4rem;
 	height: 1.4rem;
 }
 
-.main-navigation__mobile-burger-button {
+.main-header__mobile-burger-button {
 	background-image: url(/_app/assets/icons/menu.svg);	
 }
 
-.main-navigation__search-button {
+.main-header__search-button, .main-header__mobile-search-button {
 	background-image: url(/_app/assets/icons/search.svg);
 }
+
+.main-header__search-button, .main-header__menu {
+	display: none;
+}
+
+.main-header__menu {
+	display: block;
 	
-@media screen and (min-width: 900px) {
-	.main-navigation__links-list {
+}
+.main-header__menu a{
+	margin-top: var(--gap-margin);
+	transition: all 300ms ease-in-out;
+}
+
+
+
+@media screen and (min-width: 600px) {
+	.main-header {
 		display: flex;
-		justify-content: space-around;
-		flex-wrap: wrap;
 		align-items: center;
+		justify-content: space-between;
+		height: 200px;
 	}
 
-	.main-navigation__mobile {
+	.main-header__menu {
+		display: flex;
+		gap: 8vw;
+		align-items: center;
+		margin-right: var(--gap-margin);
+	}
+
+	.main-header__menu a:hover {
+		border-bottom: 3px solid;
+		font-weight: 600;
+	}
+
+	.main-header__mobile-buttons {
 		display: none;
 	}
+
+	.main-header__search-button {
+		display: block;
+	}
 }
+
+/* Todo: finn ut hvorfor navigation menu flytter på seg */
