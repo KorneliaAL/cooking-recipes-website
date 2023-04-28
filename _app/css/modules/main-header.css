@@ -9,3 +9,9 @@
 	align-items: center;
 }
 
+
+.main-navigation__search-button {
+	background-image: url(/_app/assets/icons/search.svg);
+	width: 1.4rem;
+	height: 1.4rem;
+}
