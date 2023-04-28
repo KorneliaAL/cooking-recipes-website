@@ -33,17 +33,16 @@ header {
 .main-navigation__search-button {
 	background-image: url(/_app/assets/icons/search.svg);
 }
+	
+@media screen and (min-width: 900px) {
+	.main-navigation__links-list {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		align-items: center;
+	}
 
-.main-navigation__links-list {
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	align-items: center;
-}
-
-
-.main-navigation__search-button {
-	background-image: url(/_app/assets/icons/search.svg);
-	width: 1.4rem;
-	height: 1.4rem;
+	.main-navigation__mobile {
+		display: none;
+	}
 }
