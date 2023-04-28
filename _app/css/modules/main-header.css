@@ -1,0 +1,7 @@
+.main-navigation__links-list {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
