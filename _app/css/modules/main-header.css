@@ -41,7 +41,7 @@
 	transition: all 300ms ease-in-out;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 900px) {
 	.main-header {
 		display: flex;
 		align-items: center;
