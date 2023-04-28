@@ -1,3 +1,7 @@
+.main-navigation {
+	background-color: var(--color-box-foreground);
+}
+
 .main-navigation__links-list {
 	display: flex;
 	justify-content: space-around;
