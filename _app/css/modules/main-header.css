@@ -1,5 +1,14 @@
 .main-navigation {
-	background-color: var(--color-box-foreground);
+.main-navigation__search-button, .main-navigation__mobile-burger-button{
+	width: 1.4rem;
+	height: 1.4rem;
+}
+.main-navigation__mobile-burger-button {
+	background-image: url(/_app/assets/icons/menu.svg);	
+}
+
+.main-navigation__search-button {
+	background-image: url(/_app/assets/icons/search.svg);
 }
 
 .main-navigation__links-list {
