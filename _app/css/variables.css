@@ -22,7 +22,10 @@
 	--gap-column: 0.5rem;
 	--gap-row: 0.5rem;
 	--gap-padding: 1rem;
-	--gap-margin: 0.5rem;
+	--gap-margin-x-small: 0.25rem;
+	--gap-margin-small: 0.5rem;
+	--gap-margin-medium: 1rem;
+	--gap-margin-large: 2rem; 	
 	--gap-large: 4rem;
 	--gap-medium: 2rem;
 
@@ -32,4 +35,5 @@
 	--font-size-main-body-desktop: 1rem;
 	--font-size-sub-header-desktop: 2rem;
 	--font-size-sub-header-mobile: 1.4rem;
+	--font-size-small: 0.8rem;
 }
