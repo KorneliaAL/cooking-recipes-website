@@ -4,4 +4,5 @@
 @import '/_app/css/base.css';
 @import '/_app/css/grid.css'; 
 
+@import '/_app/css/modules/frontpage-category.css';
 @import '/_app/css/modules/main-header.css';
