@@ -1,0 +1,6 @@
+.category__navigation-list {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
