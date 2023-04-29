@@ -41,6 +41,10 @@
 	transition: all 300ms ease-in-out;
 }
 
+.main-header__mobile-buttons button{
+	margin: var(--gap-margin);
+}
+
 @media screen and (min-width: 900px) {
 	.main-header {
 		display: flex;
@@ -52,13 +56,13 @@
 	.main-header__menu {
 		display: flex;
 		gap: 8vw;
+		justify-content: space-around;
 		align-items: center;
 		margin-right: var(--gap-margin);
 	}
 
 	.main-header__menu a:hover {
 		border-bottom: 3px solid;
-		font-weight: 600;
 	}
 
 	.main-header__mobile-buttons {
