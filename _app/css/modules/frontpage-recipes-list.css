@@ -37,3 +37,16 @@
 .recipes__information-title, .recipes__information-time{
 	font-size: var(--font-size-small);
 }
+
+.recipes__information-time, .recipes__list-element-information {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.recipes__list-element-information {
+	padding: var(--gap-padding);
+	border: var(--border-recipes-card);
+	border-bottom-left-radius: var(--border-radius-card);
+	border-bottom-right-radius: var(--border-radius-card);
+}
