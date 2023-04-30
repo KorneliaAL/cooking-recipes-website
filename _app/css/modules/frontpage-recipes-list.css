@@ -1,3 +1,9 @@
 .recipes {
 	margin-top: var(--gap-margin-medium);
 }
+
+.recipes__list-element {
+	width: 17.5rem;
+	position: relative;
+	margin: 2rem auto;
+}
