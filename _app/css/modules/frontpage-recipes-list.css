@@ -33,3 +33,7 @@
 .recipes__information-time-icon {
 	background-image: url(/_app/assets/icons/cook-time.svg);
 }
+
+.recipes__information-title, .recipes__information-time{
+	font-size: var(--font-size-small);
+}
