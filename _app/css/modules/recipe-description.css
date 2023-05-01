@@ -62,3 +62,7 @@
 	max-height: 30rem;
 	object-fit: cover;
 }
+
+.description__instruction-button {
+	text-align: left;
+}
