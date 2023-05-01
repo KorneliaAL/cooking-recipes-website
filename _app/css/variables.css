@@ -17,6 +17,7 @@
 	--border-radius-button: 0.5rem;
 	--border-radius-card: 0.5rem;
 	--border-radius-image-button: 100%;
+	--border-recipes-card: 1px solid var(--color-05);
 
 	/* Gap variables */
 	--gap-column: 0.5rem;

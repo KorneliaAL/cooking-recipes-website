@@ -1,4 +1,4 @@
-.category {
+.category, .category__navigation {
 	margin-top: var(--gap-margin-medium);
 }
 
@@ -24,8 +24,8 @@
 	margin-top: var(--gap-margin-x-small);
 }
 
-@media screen and (min-width: 900px) {
-	.category {
+@media screen and (min-width: 1040px) {
+	.category, .category__navigation {
 		margin-top: var(--gap-large);
 	}
 
