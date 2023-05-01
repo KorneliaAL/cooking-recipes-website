@@ -39,3 +39,21 @@
 .description__time-icon {
 	background-image: url(/_app/assets/icons/cook-time.svg);
 }
+
+.description__information-favorite-button {
+	display: flex;
+	align-items: center;
+	background-color: var(--color-02);
+	padding: var(--gap-margin-small);
+	text-transform: uppercase;
+	border-radius: var(--border-radius-card);
+}
+
+.description__favorite-button-icon::before {
+	content: url('/_app/assets/icons/favorite-heart.svg');
+	margin-right: 5px;
+}
+
+.description__information-favorite-button:hover .description__favorite-button-icon::before {
+	content: url('/_app/assets/icons/favorite-heart-filled.svg');
+}
