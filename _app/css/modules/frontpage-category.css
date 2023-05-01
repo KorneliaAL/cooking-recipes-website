@@ -24,7 +24,7 @@
 	margin-top: var(--gap-margin-x-small);
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1040px) {
 	.category, .category__navigation {
 		margin-top: var(--gap-large);
 	}
