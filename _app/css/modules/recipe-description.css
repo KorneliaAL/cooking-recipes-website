@@ -1,0 +1,10 @@
+.description__information {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.description__information-facts {
+	display: flex;
+	font-size: var(--font-size-x-small);
+}
