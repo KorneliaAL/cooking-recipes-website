@@ -57,3 +57,8 @@
 .description__information-favorite-button:hover .description__favorite-button-icon::before {
 	content: url('/_app/assets/icons/favorite-heart-filled.svg');
 }
+
+.description__image {
+	max-height: 30rem;
+	object-fit: cover;
+}
