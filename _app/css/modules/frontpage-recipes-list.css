@@ -59,6 +59,16 @@
 	border-bottom-right-radius: var(--border-radius-card);
 }
 
+.recipes__see-more-button {
+	border-radius: var(--border-radius-card);
+	background-color: var(--color-01);
+	padding: var(--gap-padding);
+	text-transform: uppercase;
+	font-weight: bold;
+	width: 17.5rem;
+	margin: 0 auto;
+}
+
 @media screen and (min-width: 1040px) {
 	.recipes__list-element {
 		width: 100%;
@@ -68,5 +78,9 @@
 		max-width: 1300px;
 		margin: 0 auto;
 		padding: var(--gap-margin-small);
+	}
+
+	.recipes__see-more-button {
+		width: 100%;
 	}
 }
