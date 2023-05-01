@@ -8,3 +8,34 @@
 	display: flex;
 	font-size: var(--font-size-x-small);
 }
+
+.description__information-title {
+	font-size: var(--font-size-main-header-desktop);
+}
+
+.description__information-fact {
+	text-align: center;
+	margin: var(--gap-margin-medium);
+}
+
+.description__iformation-amount {
+	font-weight: 700;
+}
+
+.description__information-icon {
+	width: 24px;
+	height: 24px;
+	margin: 0 auto;
+}
+
+.description__calories-icon {
+	background-image: url(/_app/assets/icons/calories.svg);
+}
+
+.description__servings-icon {
+	background-image: url(/_app/assets/icons/servings.svg);
+}
+
+.description__time-icon {
+	background-image: url(/_app/assets/icons/cook-time.svg);
+}
