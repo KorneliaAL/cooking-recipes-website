@@ -18,20 +18,28 @@
 }	
 
 .recipes__list-element-favorite-button, .recipes__information-time-icon {
-	height: 24px;
-	width: 24px;
 	background-repeat: no-repeat;
 }
 
 .recipes__list-element-favorite-button {
 	position: absolute;
+	height: 40px;
+	width: 40px;
 	right: 0.5rem;
 	top: 0.5rem;
 	background-image: url(/_app/assets/icons/favorite-heart.svg);
+	transition: all 300ms ease-in-out;
+}
+
+.recipes__list-element-favorite-button:hover, .recipes__list-element-favorite-button--active {
+	background-image: url(/_app/assets/icons/favorite-heart-filled.svg);
 }
 
 .recipes__information-time-icon {
+	height: 24px;
+	width: 24px;
 	background-image: url(/_app/assets/icons/cook-time.svg);
+	margin-right: var(--gap-margin-x-small);
 }
 
 .recipes__information-title, .recipes__information-time{
@@ -50,6 +58,7 @@
 	border-bottom-left-radius: var(--border-radius-card);
 	border-bottom-right-radius: var(--border-radius-card);
 }
+
 @media screen and (min-width: 1040px) {
 	.recipes__list-element {
 		width: 100%;
