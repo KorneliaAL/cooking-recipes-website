@@ -68,6 +68,7 @@
 	font-family: 'Playfair Display', serif;
 	font-size: var(--font-size-sub-header-desktop);
 }
+
 .description__instruction-button, 
 .description__ingredient-button {
 	display: flex;
@@ -78,6 +79,7 @@
 .description__ingredient-button {
 	align-items: center;
 }
+
 .description__instruction-button-dot, 
 .description__ingredient-button-dot {
 	border-radius: 50%;
@@ -98,4 +100,22 @@
 .description__instruction-button-text {
 	width: 95%;
 }
+
+@media screen and (min-width: 768px){
+	.description__ingredient-button:hover 
+	.description__ingredient-button-dot,
+	.description__instruction-button:hover 
+	.description__instruction-button-dot {
+		background-color: var(--color-01);
+		transition: all 310ms ease-in-out;
+	}
+
+	.description__ingredient-button:hover 
+	.description__ingredient-button-text,
+	.description__instruction-button:hover 
+	.description__instruction-button-text {
+		color: var(--color-04);
+		text-decoration: line-through;
+		transition: all 300ms ease-in-out;
+	}
 }
