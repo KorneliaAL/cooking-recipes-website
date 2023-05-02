@@ -55,7 +55,8 @@
 	margin-right: 5px;
 }
 
-.description__information-favorite-button:hover .description__favorite-button-icon::before {
+.description__information-favorite-button:hover 
+.description__favorite-button-icon::before {
 	content: url('/_app/assets/icons/favorite-heart-filled.svg');
 }
 
