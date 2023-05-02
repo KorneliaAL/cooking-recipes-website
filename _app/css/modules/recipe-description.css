@@ -64,6 +64,10 @@
 	object-fit: cover;
 }
 
+.description__sub-title {
+	font-family: 'Playfair Display', serif;
+	font-size: var(--font-size-sub-header-desktop);
+}
 .description__instruction-button, 
 .description__ingredient-button {
 	display: flex;
