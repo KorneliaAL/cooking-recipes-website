@@ -64,9 +64,27 @@
 	object-fit: cover;
 }
 
+.description__ingredients, 
+.description__ingstruction {
+	margin: 1rem;
+}
+
 .description__sub-title {
 	font-family: 'Playfair Display', serif;
 	font-size: var(--font-size-sub-header-desktop);
+}
+
+.description-ingredient-title {
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+}
+
+.description__instruction-list li {
+	margin-top: 1.5rem;
+}
+
+.description__ingredients-list li {
+	margin-top: 0.5rem;
 }
 
 .description__instruction-button, 
