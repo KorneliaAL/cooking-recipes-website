@@ -101,6 +101,12 @@
 	width: 95%;
 }
 
+@media screen and (min-width: 1040px) {
+	.description__information {
+		flex-direction: row;
+	}
+}
+
 @media screen and (min-width: 768px){
 	.description__ingredient-button:hover 
 	.description__ingredient-button-dot,
