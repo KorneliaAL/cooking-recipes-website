@@ -80,6 +80,20 @@
 	align-items: center;
 }
 
+.description__instruction-button--active {
+	height: 25px;
+	overflow: hidden;
+}
+
+.description__dot--active {
+	color: var(--color-01);
+}
+
+.description__text--active {
+	color: var(--color-04);
+	text-decoration: line-through;
+}
+
 .description__instruction-button-dot, 
 .description__ingredient-button-dot {
 	border-radius: 50%;
