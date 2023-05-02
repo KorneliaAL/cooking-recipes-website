@@ -1,7 +1,8 @@
 .description__information {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
+	flex-flow: column wrap;
 }
 
 .description__information-facts {
