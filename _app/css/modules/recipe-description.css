@@ -64,6 +64,14 @@
 	object-fit: cover;
 }
 
-.description__instruction-button {
+.description__instruction-button, 
+.description__ingredient-button {
+	display: flex;
 	text-align: left;
+	gap: 0.5rem;
+}
+
+.description__ingredient-button {
+	align-items: center;
+}
 }
