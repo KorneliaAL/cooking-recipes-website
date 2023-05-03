@@ -40,6 +40,7 @@ export default function RenderRecipes(recipes) {
 		recipeFavoriteButtonElement.dataset.id = recipeID;
 
 		recipeImageElement.appendChild(recipeFavoriteButtonElement);
+
 		recipeInformationTimeContainerElement.append(
 			recipeInformationTimeIconElement,
 			recipeInformationTimeElement
@@ -60,6 +61,6 @@ export default function RenderRecipes(recipes) {
 			const recipeElement = returnRecipeDOMElement(recipe);
 
 			recipesContainer.appendChild(recipeElement)
-		})
+		});
 	}
 }
