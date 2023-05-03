@@ -1,10 +1,21 @@
+/**
+Renders a list of recipes on the page.
+@param {Array} recipes - An array of objects containing recipe information.
+*/
+
 export default function RenderRecipes(recipes) {
 	const recipesContainer = document.querySelector('.recipes__list');
 
-	console.log(recipes[0].cookTime)
+
 	if (recipesContainer) {
 		renderHTML();
 	}
+
+	/**
+	Creates elements for recipe objects
+	@param {Object} recipe - An object containing recipe information.
+	@returns {HTMLElement} - A recipe DOM element
+	*/
 
 	function returnRecipeDOMElement(recipe) {
 		const recipeSlug = recipe.slug;
@@ -56,6 +67,9 @@ export default function RenderRecipes(recipes) {
 		return recipeCardElement;		
 	}
 
+	/**
+	Renders HTML for each recipe in the recipes array
+	*/
 	function renderHTML() {
 		recipes.forEach(recipe => {
 			const recipeElement = returnRecipeDOMElement(recipe);
