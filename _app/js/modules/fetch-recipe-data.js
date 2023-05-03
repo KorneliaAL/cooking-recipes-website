@@ -3,6 +3,7 @@ import { sanity } from '../sanity.js';
 export default async function FetchRecipeData() {
 	const query = `* [_type == 'cookingRecipes'] {
   'slug': slug.current,
+  'id': _id,
   'recipeName': name,
   'ingredients': ingredientList[],
   'intructions': instructions[],
