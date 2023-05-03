@@ -1,0 +1,164 @@
+.description__information {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-flow: column wrap;
+}
+
+.description__information-facts {
+	display: flex;
+	font-size: var(--font-size-x-small);
+}
+
+.description__information-title {
+	font-size: var(--font-size-main-header-desktop);
+}
+
+.description__information-fact {
+	text-align: center;
+	margin: var(--gap-margin-medium);
+}
+
+.description__iformation-amount {
+	font-weight: 700;
+}
+
+.description__information-icon {
+	width: 24px;
+	height: 24px;
+	margin: 0 auto;
+}
+
+.description__calories-icon {
+	background-image: url(/_app/assets/icons/calories.svg);
+}
+
+.description__servings-icon {
+	background-image: url(/_app/assets/icons/servings.svg);
+}
+
+.description__time-icon {
+	background-image: url(/_app/assets/icons/cook-time.svg);
+}
+
+.description__information-favorite-button {
+	display: flex;
+	align-items: center;
+	background-color: var(--color-02);
+	padding: var(--gap-margin-small);
+	text-transform: uppercase;
+	border-radius: var(--border-radius-card);
+}
+
+.description__favorite-button-icon::before {
+	content: url('/_app/assets/icons/favorite-heart.svg');
+	margin-right: 5px;
+}
+
+.description__information-favorite-button:hover 
+.description__favorite-button-icon::before {
+	content: url('/_app/assets/icons/favorite-heart-filled.svg');
+}
+
+.description__image {
+	object-fit: cover;
+}
+
+.description__ingredients, 
+.description__ingstruction {
+	margin: 1rem;
+}
+
+.description__sub-title {
+	font-family: 'Playfair Display', serif;
+	font-size: var(--font-size-sub-header-desktop);
+}
+
+.description-ingredient-title {
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+}
+
+.description__instruction-list li {
+	margin-top: 1.5rem;
+}
+
+.description__ingredients-list li {
+	margin-top: 0.5rem;
+}
+
+.description__instruction-button, 
+.description__ingredient-button {
+	display: flex;
+	text-align: left;
+	gap: 0.5rem;
+}
+
+.description__ingredient-button {
+	align-items: center;
+}
+
+.description__instruction-button--active {
+	height: 25px;
+	overflow: hidden;
+}
+
+.description__dot--active {
+	color: var(--color-01);
+}
+
+.description__text--active {
+	color: var(--color-04);
+	text-decoration: line-through;
+}
+
+.description__instruction-button-dot, 
+.description__ingredient-button-dot {
+	border-radius: 50%;
+	border: 1px solid var(--color-01);
+}
+
+.description__ingredient-button-dot {
+	width: 10px;
+	height: 10px;
+}
+
+.description__instruction-button-dot {
+	width: 20px;
+	height: 20px;
+	margin-top: 3px;
+}
+
+.description__instruction-button-text {
+	width: 95%;
+}
+
+@media screen and (min-width: 1040px) {
+	.description__information {
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 768px){
+	.description__ingredient-button:hover 
+	.description__ingredient-button-dot,
+	.description__instruction-button:hover 
+	.description__instruction-button-dot {
+		background-color: var(--color-01);
+		transition: all 310ms ease-in-out;
+	}
+
+	.description__ingredient-button:hover 
+	.description__ingredient-button-text,
+	.description__instruction-button:hover 
+	.description__instruction-button-text {
+		color: var(--color-04);
+		text-decoration: line-through;
+		transition: all 300ms ease-in-out;
+	}
+}
+
+/* 
+Add spacing to top section
+Increase icon size, import 40px size, and change in css
+ */
