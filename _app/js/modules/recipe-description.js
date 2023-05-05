@@ -157,6 +157,20 @@ export default function RenderRecipeDescription(recipes) {
 		return descriptionIngredients;
 	}
 
+	function returnInstructionContainerToDOMElement() {
+		const descriptionInstruction = document.createElement('div');
+		const ingredientMainTitle = document.createElement('h3');
+
+		ingredientMainTitle.textContent = 'Instruction';
+
+		descriptionInstruction.classList.add('description__ingstruction', 'grid__column-start-desktop--5', 'grid__column--7', 'grid__column-mobile--12');
+		ingredientMainTitle.classList.add('description__sub-title');
+
+		descriptionInstruction.appendChild(ingredientMainTitle);
+
+		return descriptionInstruction;
+	}
+
 	function renderHTML(slug) {
 		const currentRecipeDescription = recipes.find(recipe => recipe.slug === slug);
 
