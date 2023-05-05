@@ -6,7 +6,7 @@ export default async function FetchRecipeData() {
   'id': _id,
   'recipeName': name,
   'ingredients': ingredientList[],
-  'intructions': instructions[],
+  'instructions': instructions[],
    'category': category-> {
         name,
         'categorySlug': slug.current,
