@@ -142,7 +142,7 @@ export default function RenderRecipeDescription(recipes) {
 		return descriptionImageContainerElement;
 	}
 
-	function returnIngredientTitleToDOMElement() {
+	function returnIngredientContainerToDOMElement() {
 		const descriptionIngredients = document.createElement('div');
 		const ingredientMainTitle = document.createElement('h3');
 
@@ -178,7 +178,7 @@ export default function RenderRecipeDescription(recipes) {
 			ingredientButtonText.textContent = ingredientName;
 			ingredientButtonBoldText.textContent = `${ingredientAmount} ${ingredientUnit}`;
 			if (ingredientUnit !== undefined) {
-				ingredientButtonBoldText.textContent = `${ingredientAmount} ${ingredientUnit}`;
+				ingredientButtonBoldText.textContent = `${ingredientAmount} ${ingredientUnit} `;
 			} else {
 				ingredientButtonBoldText.textContent = ingredientAmount;
 			}
@@ -226,18 +226,52 @@ export default function RenderRecipeDescription(recipes) {
 		return descriptionInstruction;
 	}
 
+	function returnRecipeInstructionToDOMElement(instructions) {
+		const instructionsListContainer = document.createElement('ul');
+
+		instructionsListContainer.classList.add('description__instruction-list')
+		instructions.instructions.forEach(instruction => {
+
+			const instructionListItemElement = document.createElement('li');
+			const instructionButton = document.createElement('button');
+			const instructionButtonDot = document.createElement('div');
+			const instructionButtonText = document.createElement('div');
+
+			instructionButtonText.textContent = instruction.step;
+			
+			instructionButton.classList.add('description__instruction-button');
+			instructionButtonDot.classList.add('description__instruction-button-dot');
+			instructionButtonText.classList.add('description__instruction-button-text');
+
+			instructionButton.append(
+				instructionButtonDot,
+				instructionButtonText
+			);
+
+			instructionListItemElement.appendChild(instructionButton);
+
+			instructionsListContainer.appendChild(instructionListItemElement);
+		});
+		return instructionsListContainer;
+	}
+
 	function renderHTML(slug) {
 		const currentRecipeDescription = recipes.find(recipe => recipe.slug === slug);
 
 		const recipeDescriptonInformation = returnRecipeInfoToDOMElement(currentRecipeDescription);
 		const recipeDescriptionImage = returnRecipeImageToDOMElement(currentRecipeDescription);
-		const descriptionIngredientsContainer = returnIngredientTitleToDOMElement();
+		const descriptionIngredientsContainer = returnIngredientContainerToDOMElement();
 		const descriptionInstructionContainer = returnInstructionContainerToDOMElement();
-		currentRecipeDescription.ingredients.forEach(ingredient => {
-			const ingredientList = returnRecipeIngredientsToDOMElement(ingredient);
+		const recipeInstructions = returnRecipeInstructionToDOMElement(currentRecipeDescription)
 
-			descriptionIngredientsContainer.appendChild(ingredientList);
+
+		currentRecipeDescription.ingredients.forEach(ingredient => {
+			const ingredientsList = returnRecipeIngredientsToDOMElement(ingredient);
+
+			descriptionIngredientsContainer.appendChild(ingredientsList);
 		});
+
+		descriptionInstructionContainer.append(recipeInstructions)		
 
 		recipeDescription.append(
 			recipeDescriptonInformation,
