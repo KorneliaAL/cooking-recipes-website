@@ -157,6 +157,61 @@ export default function RenderRecipeDescription(recipes) {
 		return descriptionIngredients;
 	}
 
+	function returnRecipeIngredientsToDOMElement(ingredient) {
+		const ingredientsContainer = document.createElement('div');
+		const ingredientListTitleElement = document.createElement('h4');
+		const ingredientListContainer = document.createElement('ul');
+		ingredientListTitleElement.textContent = ingredient.name;
+
+		ingredient.ingredients.forEach(ingredientElement => {
+			const ingredientAmount = ingredientElement.amount;
+			const ingredientName = ingredientElement.name;
+			const ingredientUnit = ingredientElement.unit; 
+
+			const ingredientListElement = document.createElement('li');
+			const ingredientButton = document.createElement('button');
+			const ingredientButtonDot = document.createElement('div');
+			const ingredientButtonTextContainer = document.createElement('div');
+			const ingredientButtonBoldText = document.createElement('b');
+			const ingredientButtonText = document.createElement('span');
+
+			ingredientButtonText.textContent = ingredientName;
+			ingredientButtonBoldText.textContent = `${ingredientAmount} ${ingredientUnit}`;
+			if (ingredientUnit !== undefined) {
+				ingredientButtonBoldText.textContent = `${ingredientAmount} ${ingredientUnit}`;
+			} else {
+				ingredientButtonBoldText.textContent = ingredientAmount;
+			}
+
+			ingredientButton.classList.add('description__ingredient-button');
+			ingredientButtonDot.classList.add('description__ingredient-button-dot');
+			ingredientButtonTextContainer.classList.add('description__ingredient-button-text');
+
+			ingredientButtonTextContainer.append(
+				ingredientButtonBoldText,
+				ingredientButtonText
+				);
+
+			ingredientButton.append(
+				ingredientButtonDot,
+				ingredientButtonTextContainer
+			);
+
+			ingredientListElement.appendChild(ingredientButton);
+			ingredientListContainer.append(ingredientListElement);
+		});
+
+		ingredientListTitleElement.classList.add('description-ingredient-title');
+		ingredientListContainer.classList.add('description__ingredients-list');
+
+		ingredientsContainer.append(
+			ingredientListTitleElement,
+			ingredientListContainer
+		)
+
+		return ingredientsContainer;
+	}
+
 	function returnInstructionContainerToDOMElement() {
 		const descriptionInstruction = document.createElement('div');
 		const ingredientMainTitle = document.createElement('h3');
@@ -177,15 +232,18 @@ export default function RenderRecipeDescription(recipes) {
 		const recipeDescriptonInformation = returnRecipeInfoToDOMElement(currentRecipeDescription);
 		const recipeDescriptionImage = returnRecipeImageToDOMElement(currentRecipeDescription);
 		const descriptionIngredientsContainer = returnIngredientTitleToDOMElement();
+		const descriptionInstructionContainer = returnInstructionContainerToDOMElement();
+		currentRecipeDescription.ingredients.forEach(ingredient => {
+			const ingredientList = returnRecipeIngredientsToDOMElement(ingredient);
 
-		recipeDescription.append(recipeDescriptonInformation);
-
-		// console.log(currentRecipeDescription.ingredients);
+			descriptionIngredientsContainer.appendChild(ingredientList);
+		});
 
 		recipeDescription.append(
 			recipeDescriptonInformation,
 			recipeDescriptionImage,
 			descriptionIngredientsContainer,
+			descriptionInstructionContainer
 		);
 	}
 }
