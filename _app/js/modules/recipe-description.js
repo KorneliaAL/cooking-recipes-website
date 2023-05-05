@@ -2,9 +2,6 @@ export default function RenderRecipeDescription(recipes) {
 
 	const recipeDescription = document.querySelector('.description');
 
-	const descriptionIngredients = document.createElement('div');
-	// const descriptionIngredientsTitle = document.createElement('h3');
-
 	if (recipeDescription) {
 		const urlParams = new URLSearchParams(window.location.search);
 		const slug = urlParams.get('recipe');
@@ -145,11 +142,27 @@ export default function RenderRecipeDescription(recipes) {
 		return descriptionImageContainerElement;
 	}
 
+	function returnIngredientTitleToDOMElement() {
+		const descriptionIngredients = document.createElement('div');
+		const ingredientMainTitle = document.createElement('h3');
+
+		ingredientMainTitle.textContent = 'Ingredients';
+
+		descriptionIngredients.classList.add('description__ingredients', 'grid__column-start-desktop--2', 'grid__column--3', 'grid__column-mobile--12');
+		ingredientMainTitle.classList.add('description__sub-title');
+
+		descriptionIngredients.appendChild(ingredientMainTitle);
+
+
+		return descriptionIngredients;
+	}
+
 	function renderHTML(slug) {
 		const currentRecipeDescription = recipes.find(recipe => recipe.slug === slug);
 
 		const recipeDescriptonInformation = returnRecipeInfoToDOMElement(currentRecipeDescription);
 		const recipeDescriptionImage = returnRecipeImageToDOMElement(currentRecipeDescription);
+		const descriptionIngredientsContainer = returnIngredientTitleToDOMElement();
 
 		recipeDescription.append(recipeDescriptonInformation);
 
@@ -158,6 +171,8 @@ export default function RenderRecipeDescription(recipes) {
 		recipeDescription.append(
 			recipeDescriptonInformation,
 			recipeDescriptionImage,
+			descriptionIngredientsContainer,
+		);
 	}
 }
 
