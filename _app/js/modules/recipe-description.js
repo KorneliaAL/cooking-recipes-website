@@ -1,10 +1,12 @@
+import HandleinstructionButtonClick from "./instruction-button.js";
+
 /**
 Renders the recipe description on the webpage
 @param {Object} recipes - An object containing the recipe information to be displayed
 @returns {HTMLElement} - The recipe description elements to be appended to the DOM
 */
 
-export default function RenderRecipeDescription(recipes) {
+export default async function RenderRecipeDescription(recipes) {
 
 	const recipeDescription = document.querySelector('.description');
 
@@ -274,6 +276,8 @@ export default function RenderRecipeDescription(recipes) {
 			const instructionButtonText = document.createElement('div');
 
 			instructionButtonText.textContent = instruction.step;
+
+			instructionButton.addEventListener('click', HandleinstructionButtonClick);
 			
 			instructionButton.classList.add('description__instruction-button');
 			instructionButtonDot.classList.add('description__instruction-button-dot');
