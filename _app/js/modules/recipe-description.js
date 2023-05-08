@@ -1,10 +1,12 @@
+import HandleinstructionButtonClick from "./instruction-button.js";
+
 /**
 Renders the recipe description on the webpage
 @param {Object} recipes - An object containing the recipe information to be displayed
 @returns {HTMLElement} - The recipe description elements to be appended to the DOM
 */
 
-export default function RenderRecipeDescription(recipes) {
+export default async function RenderRecipeDescription(recipes) {
 
 	const recipeDescription = document.querySelector('.description');
 
@@ -16,6 +18,9 @@ export default function RenderRecipeDescription(recipes) {
 		renderHTML(slug);
 	}
 
+	function handleIngreientsButtonClick() {
+
+	}
 
 	/**
 	Returns the recipe information as DOM elements
@@ -158,6 +163,8 @@ export default function RenderRecipeDescription(recipes) {
 			'grid__column--10',
 			'grid__column-mobile--12');
 
+		descriptionImageElement.classList.add('description__image');
+
 		descriptionImageContainerElement.append(descriptionImageElement);
 
 		return descriptionImageContainerElement;
@@ -197,8 +204,8 @@ export default function RenderRecipeDescription(recipes) {
 
 			const ingredientListElement = document.createElement('li');
 			const ingredientButton = document.createElement('button');
-			const ingredientButtonDot = document.createElement('div');
-			const ingredientButtonTextContainer = document.createElement('div');
+			// const ingredientButtonDot = document.createElement('div');
+			// const ingredientButtonTextContainer = document.createElement('div');
 			const ingredientButtonBoldText = document.createElement('b');
 			const ingredientButtonText = document.createElement('span');
 
@@ -207,21 +214,22 @@ export default function RenderRecipeDescription(recipes) {
 			if (ingredientUnit !== undefined) {
 				ingredientButtonBoldText.textContent = `${ingredientAmount} ${ingredientUnit} `;
 			} else {
-				ingredientButtonBoldText.textContent = ingredientAmount;
+				ingredientButtonBoldText.textContent = `${ingredientAmount} `;
 			}
 
-			ingredientButton.classList.add('description__ingredient-button');
-			ingredientButtonDot.classList.add('description__ingredient-button-dot');
-			ingredientButtonTextContainer.classList.add('description__ingredient-button-text');
+			ingredientButton.addEventListener('click', handleIngreientsButtonClick);
 
-			ingredientButtonTextContainer.append(
-				ingredientButtonBoldText,
-				ingredientButtonText
-				);
+			ingredientButton.classList.add('description__ingredient-button');
+			// ingredientButtonDot.classList.add('description__ingredient-button-dot');
+			// ingredientButtonTextContainer.classList.add('description__ingredient-button-text');
+
+			// ingredientButtonTextContainer.append(
+				
+			// 	);
 
 			ingredientButton.append(
-				ingredientButtonDot,
-				ingredientButtonTextContainer
+				ingredientButtonBoldText,
+				ingredientButtonText
 			);
 
 			ingredientListElement.appendChild(ingredientButton);
@@ -270,19 +278,21 @@ export default function RenderRecipeDescription(recipes) {
 
 			const instructionListItemElement = document.createElement('li');
 			const instructionButton = document.createElement('button');
-			const instructionButtonDot = document.createElement('div');
-			const instructionButtonText = document.createElement('div');
+			// const instructionButtonDot = document.createElement('div');
+			// const instructionButtonText = document.createElement('div');
 
-			instructionButtonText.textContent = instruction.step;
+			instructionButton.textContent = instruction.step;
+
+			instructionButton.addEventListener('click', HandleinstructionButtonClick);
 			
 			instructionButton.classList.add('description__instruction-button');
-			instructionButtonDot.classList.add('description__instruction-button-dot');
-			instructionButtonText.classList.add('description__instruction-button-text');
+			// instructionButtonDot.classList.add('description__instruction-button-dot');
+			// instructionButtonText.classList.add('description__instruction-button-text');
 
-			instructionButton.append(
-				instructionButtonDot,
-				instructionButtonText
-			);
+			// instructionButton.append(
+			// 	instructionButtonDot,
+			// 	instructionButtonText
+			// );
 
 			instructionListItemElement.appendChild(instructionButton);
 
