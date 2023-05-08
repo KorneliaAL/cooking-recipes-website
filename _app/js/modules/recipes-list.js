@@ -1,13 +1,18 @@
+import FavoriteButton from "./favorite-button.js";
+import GetFavoriteRecipeLocally from "./get-favorite-recipe-locally.js";
 /**
 Renders a list of recipes on the page.
 @param {Array} recipes - An array of objects containing recipe information.
 */
 
 export default function RenderRecipes(recipes) {
-	const recipesContainer = document.querySelector('.recipes__list');
+	const frontPageRecipesContainer = document.querySelector('.recipes__list');
+	const favoritePageRecipesContainer = document.querySelector('.recipes__favorite-list');
+	const favoriteButtonLocally = GetFavoriteRecipeLocally();
 
+	console.log(FavoriteButton);
 
-	if (recipesContainer) {
+	if (frontPageRecipesContainer || favoritePageRecipesContainer) {
 		renderHTML();
 	}
 
@@ -20,7 +25,7 @@ export default function RenderRecipes(recipes) {
 	function returnRecipeDOMElement(recipe) {
 		const recipeSlug = recipe.slug;
 		const recipeID = recipe.id;
-		const recipeURL = `/_app/recipe-description/inedx.html?recipe=${recipeSlug}`;
+		const recipeURL = `/_app/recipe-description/index.html?recipe=${recipeSlug}`;
 		const recipeImageURL = recipe.image.imageURL;
 		const recipeName = recipe.recipeName;
 		const cookTime = recipe.cookTime;
@@ -33,6 +38,8 @@ export default function RenderRecipes(recipes) {
 		const recipeInformationTimeContainerElement = document.createElement('div');
 		const recipeInformationTimeIconElement = document.createElement('div');
 		const recipeInformationTimeElement = document.createElement('div');
+
+		recipeFavoriteButtonElement.addEventListener('click', FavoriteButton);
 
 		recipeCardElement.setAttribute('href', recipeURL);
 		recipeImageElement.style.backgroundImage = `url('${recipeImageURL}')`;
@@ -74,10 +81,13 @@ export default function RenderRecipes(recipes) {
 	Renders HTML for each recipe in the recipes array
 	*/
 	function renderHTML() {
-		recipes.forEach(recipe => {
-			const recipeElement = returnRecipeDOMElement(recipe);
 
-			recipesContainer.appendChild(recipeElement)
-		});
+		if (frontPageRecipesContainer) {
+			recipes.forEach(recipe => {
+				const recipeElement = returnRecipeDOMElement(recipe);
+
+				frontPageRecipesContainer.appendChild(recipeElement)
+			});
+		}
 	}
 }
