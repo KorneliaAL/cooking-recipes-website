@@ -1,4 +1,4 @@
- export default function HandleinstructionButtonClick(event) {
+ export default function HandleInstructionButtonClick(event) {
 	const currentButton = event.target;
 	
 	function renderHTML() {	
