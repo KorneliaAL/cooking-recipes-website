@@ -1,9 +1,8 @@
 export default function FavoriteButton(event) {
 	event.preventDefault();
-	const currentButton = event.target;
-	let favoritesRecipe = getFavoriteRecipeLocally();
 
-	console.log(favoritesRecipe);
+	let favoritesRecipe = getFavoriteRecipeLocally();
+	const currentButton = event.target;
 
 	function handleFavoriteButtonClick() {
 		const id = currentButton.dataset.id;
