@@ -1,4 +1,4 @@
-import HandleinstructionButtonClick from "./instruction-button.js";
+import HandleInstructionButtonClick from "./instruction-button.js";
 
 /**
 Renders the recipe description on the webpage
@@ -57,8 +57,7 @@ export default async function RenderRecipeDescription(recipes) {
 		const descriptionTimeAmountElement = document.createElement('div');
 		const descriptionTimeTextElement = document.createElement('div');
 		const descriptionFavoriteButtonElement = document.createElement('button');
-		const descriptionFavoriteButtonIconElement = document.createElement('div');
-		const descriptionFavoriteButtonTextElement = document.createElement('div');
+		descriptionFavoriteButtonElement.addEventListener('click', FavoriteButton);
 
 		// Set the text content for the recipe information elements
 		descriptionTitleElement.textContent = descriptionTitle;
