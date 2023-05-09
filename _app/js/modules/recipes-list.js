@@ -10,12 +10,10 @@ export default function RenderRecipes(recipes) {
 	const favoritePageRecipesContainer = document.querySelector('.recipes__favorite-list');
 	const favoriteButtonLocally = GetFavoriteRecipeLocally();
 
-	console.log(FavoriteButton);
-
 	if (frontPageRecipesContainer || favoritePageRecipesContainer) {
 		renderHTML();
 	}
-
+	
 	/**
 	Creates elements for recipe objects
 	@param {Object} recipe - An object containing recipe information.
@@ -86,7 +84,21 @@ export default function RenderRecipes(recipes) {
 			recipes.forEach(recipe => {
 				const recipeElement = returnRecipeDOMElement(recipe);
 
-				frontPageRecipesContainer.appendChild(recipeElement)
+				frontPageRecipesContainer.appendChild(recipeElement);
+			});
+		
+		} else if (favoritePageRecipesContainer) {
+			const filteredRecipes = recipes.filter(recipe => {
+				return favoriteButtonLocally.includes(recipe.id);
+			});
+			// storedArray is parsed from the local storage using JSON.parse().
+			// The filter() method is used to check if each recipe.id exists within the storedArray.The includes() method is used to perform the existence check.
+			// The filteredRecipes array will contain the recipes whose IDs match the ones stored in storedArray.
+
+			filteredRecipes.forEach(recipe => {
+				const recipeElement = returnRecipeDOMElement(recipe);
+
+				favoritePageRecipesContainer.appendChild(recipeElement);
 			});
 		}
 	}
