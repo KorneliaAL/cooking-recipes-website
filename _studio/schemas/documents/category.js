@@ -15,6 +15,28 @@ export default {
 			options: {
 				source: 'name'
 			}
-		}
+		},
+		{
+			title: 'Image',
+			name: 'image',
+			type: 'object',
+			fields: [
+				{
+					title: 'Image',
+					name: 'image',
+					type: 'image'
+				},
+				{
+					title: 'Alternative text',
+					name: 'altText',
+					type: 'string'
+				},
+				{
+					title: 'Credit',
+					name: 'credit',
+					type: 'url'
+				}
+			]
+		},
 	]
 }
