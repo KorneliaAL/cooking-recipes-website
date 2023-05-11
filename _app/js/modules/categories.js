@@ -1,3 +1,5 @@
+import RenderRecipes from "./recipes-list.js";
+
 export default function Categories(recipes) {
 	const categoryContainer = document.querySelector('.category__navigation-list');
 /**
