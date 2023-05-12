@@ -25,11 +25,18 @@
 	border-radius: var(--border-radius-image-button);
 	height: 100%;
 	object-fit: cover;
+	pointer-events: none;
 }
 
 .category__navigation-element-title {
 	font-size: var(--font-size-small);
 	margin-top: var(--gap-margin-x-small);
+	pointer-events: none;
+	font-weight: inherit;
+}
+
+.category--active {
+	font-weight: bold;
 }
 
 @media screen and (min-width: 1040px) {
