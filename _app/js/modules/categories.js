@@ -24,11 +24,21 @@ export default function Categories(recipes) {
 		// console.log(categories)
 	}
 
+
+	function handleButtonElementClick(event) {
+		const currentCategoryID = event.target.dataset.category;
+		
+		const filteredRecipe = recipes.filter(recipe => {
+			return recipe.category.name === currentCategoryID;
+		});
+
+		RenderRecipes(filteredRecipe);
+	}
+
 	function returnCategoryDOMElement(category) {
 		const categoryName = category.name;
 		const imageURL = category.image.imageURL;
 		const altText = category.image.altText;
-		const id = category.id;
 
 		const listItemElement = document.createElement('li');
 		const buttonElement = document.createElement('button');
@@ -38,13 +48,18 @@ export default function Categories(recipes) {
 		imageElement.setAttribute('src', imageURL);
 		imageElement.setAttribute('alt', altText);
 
-		buttonElement.dataset.id = id;
+		buttonElement.dataset.category = categoryName;
+		imageElement.dataset.category = categoryName;
+		buttonTextElement.dataset.category = categoryName;
+
 		buttonTextElement.textContent = categoryName;
 
 		listItemElement.classList.add('category__navigation-element');
 		buttonElement.classList.add('category__navigation-category-button')
 		imageElement.classList.add('category__navigation-element-image');
 		buttonTextElement.classList.add('category__navigation-element-title');
+
+		buttonElement.addEventListener('click', handleButtonElementClick);
 
 		buttonElement.append(
 			imageElement,
