@@ -14,6 +14,15 @@ export default function Categories(recipes) {
 	function createCategoryButtons() {
 		const categories = [];
 
+		categories.push({
+			id: 'all',
+			name: 'All',
+			image: {
+				imageURL: 'https://www.gausdal.kommune.no/getfile.php/3795042.1852.wppvrepqfs/640x0/Bra%26nbsp%3Bmat.jpg',
+				altText: 'Vegtables and fruits formed as a heart'
+			}
+		});
+
 		recipes.forEach(recipe => {
 			const category = recipe.category;
 
