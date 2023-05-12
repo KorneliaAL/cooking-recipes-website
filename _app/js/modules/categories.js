@@ -1,6 +1,8 @@
 import RenderRecipes from "./recipes-list.js";
 
 export default function Categories(recipes) {
+	let activeButton = null;
+
 	const categoryContainer = document.querySelector('.category__navigation-list');
 /**
  * @Todo - fetch category image in fetch recipe
@@ -20,19 +22,29 @@ export default function Categories(recipes) {
 				categories.push(category);
 			}
 		});
+	
 		renderHTML(categories);
-		// console.log(categories)
 	}
 
 
 	function handleButtonElementClick(event) {
-		const currentCategoryID = event.target.dataset.category;
-		
-		const filteredRecipe = recipes.filter(recipe => {
-			return recipe.category.name === currentCategoryID;
-		});
+		const currentCategoryName = event.target.dataset.category;
+		const currentButton = event.target;
 
-		RenderRecipes(filteredRecipe);
+		if(currentCategoryName === 'All') {
+			RenderRecipes(recipes);
+			renderCategory(currentButton);
+
+		} else {
+			const filteredRecipe = recipes.filter(recipe => {
+				return recipe.category.name === currentCategoryName;
+			});
+
+			RenderRecipes(filteredRecipe);
+			renderCategory(currentButton);
+		}
+
+		
 	}
 
 	function returnCategoryDOMElement(category) {
@@ -68,6 +80,16 @@ export default function Categories(recipes) {
 		listItemElement.appendChild(buttonElement);
 
 		return listItemElement;
+	}
+
+	function renderCategory(button) {
+
+		if(activeButton) {
+			activeButton.classList.remove('category--active');
+		}
+
+		button.classList.add('category--active');
+		activeButton = button;
 	}
 
 	function renderHTML(categories) {
