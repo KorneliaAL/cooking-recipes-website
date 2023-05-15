@@ -81,6 +81,9 @@ export default function RenderRecipes(recipes) {
 	function renderHTML() {
 
 		if (frontPageRecipesContainer) {
+			frontPageRecipesContainer.textContent = '';
+		}
+		if (frontPageRecipesContainer) {
 			recipes.forEach(recipe => {
 				const recipeElement = returnRecipeDOMElement(recipe);
 
