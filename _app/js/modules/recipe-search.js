@@ -1,8 +1,7 @@
 import RenderRecipes from "./recipes-list.js";
-export default function RecipeSearch(recipes) {
 
+export default function RecipeSearch(recipes) {
 	const searchInput = document.querySelector('.search__input');
-	const searchContainer = document.querySelector('.search');
 
 	const recipeSearchData = recipes.map(function (recipe) {
 		return {
@@ -11,16 +10,29 @@ export default function RecipeSearch(recipes) {
 		};
 	});
 
-	searchInput.addEventListener('input', handleSearchInputInput);
-
-	if (searchContainer) {
+	if (searchInput.value !== '') {
 		handleSearchInputInput();
+	} else {
+		RenderRecipes(recipes);
 	}
 
-	function handleSearchInputInput(event) {
-		const searchValue = event.target.value.trim().toLowerCase();
+	// Used the code from:
+	// https://www.freecodecamp.org/news/javascript-debounce-example/
+	function debounce(func, timeout = 300) {
+		let timer;
+		return function (...args) {
+			clearTimeout(timer);
+			timer = setTimeout(() => {
+				func.apply(this, args);
+			}, timeout);
+		};
+	}
+
+	const handleSearchInputInput = debounce(() => {
+		const searchValue = searchInput.value.trim().toLowerCase();
 		let searchResults = [];
 		let finalRecipe = [];
+
 		if (searchValue !== '') {
 			searchResults = recipeSearchData.filter((recipe) => {
 				return (
@@ -28,16 +40,17 @@ export default function RecipeSearch(recipes) {
 					recipe.category.toLowerCase().includes(searchValue)
 				);
 			});
-		}
-		finalRecipe = recipes.filter((recipe) => {
-			return searchResults.some((result) => {
-				return (
-					result.recipeName === recipe.recipeName &&
-					result.category === recipe.category.name
-				);
+			finalRecipe = recipes.filter((recipe) => {
+				return searchResults.some((result) => {
+					return (
+						result.recipeName === recipe.recipeName &&
+						result.category === recipe.category.name
+					);
+				});
 			});
-		});
-
+		} else {
+			finalRecipe = recipes;
+		}
 		RenderRecipes(finalRecipe);
-	}
+	});
 }
