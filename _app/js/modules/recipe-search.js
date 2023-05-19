@@ -1,7 +1,10 @@
 import RenderRecipes from "./recipes-list.js";
 
 export default function RecipeSearch(recipes) {
+	let searchResults = [];
+	let finalRecipe = [];
 	const searchInput = document.querySelector('.search__input');
+	const searchContainer = document.querySelector('.search');
 
 	const recipeSearchData = recipes.map(function (recipe) {
 		return {
@@ -10,9 +13,11 @@ export default function RecipeSearch(recipes) {
 		};
 	});
 
-	if (searchInput.value !== '') {
+	searchInput.addEventListener('input', debounce(handleSearchInputInput));
+
+	if (searchContainer && searchInput.value !== '') {
 		handleSearchInputInput();
-	} else {
+	} else if (searchContainer) {
 		RenderRecipes(recipes);
 	}
 
@@ -28,10 +33,14 @@ export default function RecipeSearch(recipes) {
 		};
 	}
 
-	const handleSearchInputInput = debounce(() => {
+	function handleSearchInputInput() {
+		filterRecipes();
+		RenderRecipes(finalRecipe);
+	}
+
+	function filterRecipes() {
 		const searchValue = searchInput.value.trim().toLowerCase();
-		let searchResults = [];
-		let finalRecipe = [];
+
 
 		if (searchValue !== '') {
 			searchResults = recipeSearchData.filter((recipe) => {
@@ -51,6 +60,5 @@ export default function RecipeSearch(recipes) {
 		} else {
 			finalRecipe = recipes;
 		}
-		RenderRecipes(finalRecipe);
-	});
+	}
 }
