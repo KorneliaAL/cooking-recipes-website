@@ -9,7 +9,7 @@ To access the Recipe Website, simply click on the following link: [Recipe Websit
 ## Features
 
 - Recipe Categories: Browse recipes by different categories such as appetizers, main courses, desserts, and more.
-- Search Functionality: Use the search bar to find recipes based on specific ingredients or dish names.
+- Search Functionality: Use the search bar to find recipes based on specific category or dish names.
 - Recipe Details: Click on a recipe to view its detailed instructions, ingredients, and cooking time.
 - Favorites: Save your favorite recipes for quick access in the future.
 
