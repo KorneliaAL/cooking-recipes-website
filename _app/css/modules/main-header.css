@@ -3,8 +3,11 @@
 	padding: 1.5rem;
 }
 
-.main-header--visible {
-	height: 100vh;
+.main-header--no-scroll {
+	overflow: hidden;
+	position: fixed;
+	width: 100%;
+	overflow-x: hidden;
 }
 
 .main-header__content {
@@ -34,6 +37,7 @@
 
 .main-header__menu--visible {
 	display: block;
+	height: 100vh;
 }
 
 .main-header__menu a{
