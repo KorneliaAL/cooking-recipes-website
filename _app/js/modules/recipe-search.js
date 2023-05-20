@@ -27,6 +27,11 @@ export default function RecipeSearch(recipes) {
 		};
 	});
 
+	if (searchContainer) {
+		// Attach the debounced search input event listener
+		searchInput.addEventListener('input', debounce(handleSearchInputInput));
+	}
+
 	/**
 	 * Delays the execution of a function using the debounce technique.
 	 * Used the code from: https://www.freecodecamp.org/news/javascript-debounce-example/
@@ -76,9 +81,6 @@ export default function RecipeSearch(recipes) {
 			finalRecipe = recipes;
 		}
 	}
-
-	// Attach the debounced search input event listener
-	searchInput.addEventListener('input', debounce(handleSearchInputInput));
 
 	// Perform initial search handling
 	if (searchContainer && searchInput.value !== '') {
