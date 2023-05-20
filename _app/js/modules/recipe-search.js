@@ -1,7 +1,8 @@
 import RenderRecipes from "./recipes-list.js";
 
 /**
- * @todo Update the logic to check if the category contains a active class.
+ * @todo Update the logic to check if the category is active.
+ *   If the category is active, remove the active state when using the search bar.
  */
 
 
