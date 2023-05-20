@@ -1,6 +1,11 @@
 import RenderRecipes from "./recipes-list.js";
 
 /**
+ * @todo Update the logic to check if the category contains a active class.
+ */
+
+
+/**
  * Represents a RecipeSearch.
  * @param {Array} recipes - The array of recipes.
  */
@@ -65,7 +70,7 @@ export default function RecipeSearch(recipes) {
 					);
 				});
 			});
-			// No search value, display all recipes
+		// No search value, display all recipes
 		} else {
 			finalRecipe = recipes;
 		}
