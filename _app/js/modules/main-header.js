@@ -6,11 +6,18 @@ export default function Header() {
 
 	function handleNavigationButtonClick(event) {
 		isCollapsed = !isCollapsed;
+		renderHTML()
+	}
 
+	function renderHTML() {
 		if (isCollapsed) {
-			navigationList.classList.add('main-header__menu--visible')
+			navigationList.classList.add('main-header__menu--visible');
+			// Disable scroll
+			document.body.classList.add('main-header--no-scroll')
 		} else {
 			navigationList.classList.remove('main-header__menu--visible');
+			// Enable scroll
+			document.body.classList.remove('main-header--no-scroll');
 		}
 	}
 }
