@@ -40,6 +40,28 @@
 	height: 100vh;
 }
 
+.main-header__menu--visible li {
+	border: 1px solid #000;
+	padding: var(--gap-margin-small);
+	width: 100%;
+	position: relative;
+}
+
+.main-header__menu--visible a::after {
+	content: '';
+	background-image: url('/_app/assets/icons/chevron-right.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 3rem;
+	height: 3rem;
+}
+
+.main-header__menu--visible a {
+	/* border: 1px solid #000; */
+	width: 100%;
+}
+
 .main-header__menu a{
 	margin-top: var(--gap-margin-small);
 	transition: all 300ms ease-in-out;
