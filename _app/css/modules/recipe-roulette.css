@@ -1,0 +1,15 @@
+.recipe-roulette__recipe-card--blur {
+	position: relative;
+}
+
+.recipe-roulette__recipe-card--blur::before {
+	content: '';
+	border-radius: var(--border-radius-card);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	backdrop-filter: blur(3px);
+	z-index: 1;
+}
