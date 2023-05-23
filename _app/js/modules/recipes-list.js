@@ -8,10 +8,18 @@ Renders a list of recipes on the page.
 export default function RenderRecipes(recipes) {
 	const frontPageRecipesContainer = document.querySelector('.recipes__list');
 	const favoritePageRecipesContainer = document.querySelector('.recipes__favorite-list');
+	const recipeRouletteContainer = document.querySelector('.recipe-roulette__recipe-card');
+	const rouletteButton = document.querySelector('.recipe__roulette-button');
 	const favoriteButtonLocally = GetFavoriteRecipeLocally();
 
 	if (frontPageRecipesContainer || favoritePageRecipesContainer) {
 		renderHTML();
+	}
+
+	if (recipeRouletteContainer) {
+		handleRouletteButtonClick();
+		addBlurClass();
+		rouletteButton.addEventListener('click', handleRouletteButtonClick);
 	}
 	
 	/**
@@ -19,6 +27,27 @@ export default function RenderRecipes(recipes) {
 	@param {Object} recipe - An object containing recipe information.
 	@returns {HTMLElement} - A recipe DOM element
 	*/
+
+	function handleRouletteButtonClick() {
+		const recipeRoulette = getRandomRecipe();
+
+		renderRouletteRecipe(recipeRoulette);
+	}
+
+	function getRandomRecipe() {
+		const dinnerRecipes = recipes.filter(recipe => {
+			return recipe.category.name === 'Dinner';
+		});
+
+		const randomRecipeindex = Math.floor(Math.random() * dinnerRecipes.length);
+		const recipeRoulette = dinnerRecipes[randomRecipeindex];
+
+		return recipeRoulette
+	}
+
+	function addBlurClass() {
+		recipeRouletteContainer.classList.add('recipe-roulette__recipe-card--blur');
+	}
 
 	function returnRecipeDOMElement(recipe) {
 		const recipeSlug = recipe.slug;
@@ -75,6 +104,8 @@ export default function RenderRecipes(recipes) {
 		return recipeCardElement;		
 	}
 
+	// console.log(recipes[0]);
+
 	/**
 	Renders HTML for each recipe in the recipes array
 	*/
@@ -103,6 +134,15 @@ export default function RenderRecipes(recipes) {
 
 				favoritePageRecipesContainer.appendChild(recipeElement);
 			});
-		}
+		} 
+	}
+
+	function renderRouletteRecipe(recipe) {
+		recipeRouletteContainer.textContent = '';
+		if (recipeRouletteContainer.classList.contains('recipe-roulette__recipe-card--blur')) {
+			recipeRouletteContainer.classList.remove('recipe-roulette__recipe-card--blur');
+		} 
+			const rouletteRecipe = returnRecipeDOMElement(recipe);
+			recipeRouletteContainer.appendChild(rouletteRecipe);
 	}
 }
