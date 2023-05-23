@@ -5,7 +5,6 @@ import RenderRecipes from "./recipes-list.js";
  *   If the category is active, remove the active state when using the search bar.
  */
 
-
 /**
  * Represents a RecipeSearch.
  * @param {Array} recipes - The array of recipes.
@@ -18,8 +17,9 @@ export default function RecipeSearch(recipes) {
 	// Get the search input and search container elements
 	const searchInput = document.querySelector('.search__input');
 	const searchContainer = document.querySelector('.search');
+	const searchButton = document.querySelector('.search__button');
 
-	// Prepare recipe search data for filtering
+	// Creates new array 
 	const recipeSearchData = recipes.map(function (recipe) {
 		return {
 			recipeName: recipe.recipeName,
@@ -28,22 +28,18 @@ export default function RecipeSearch(recipes) {
 	});
 
 	if (searchContainer) {
-		// Attach the debounced search input event listener
+		// Event listeners
+
 		searchInput.addEventListener('input', debounce(handleSearchInputInput));
+		searchButton.addEventListener('click', handleSearchButtonClick);
+		searchInput.addEventListener('keyup', handleEnterKeyup);
 	}
 
-	/**
-	 * Delays the execution of a function using the debounce technique.
-	 * Used the code from: https://www.freecodecamp.org/news/javascript-debounce-example/
-	 */
-	function debounce(func, timeout = 300) {
-		let timer;
-		return function (...args) {
-			clearTimeout(timer);
-			timer = setTimeout(() => {
-				func.apply(this, args);
-			}, timeout);
-		};
+	function handleEnterKeyup(event) {
+		if (event.key === 'Enter') {
+			filterRecipes();
+			RenderRecipes(finalRecipe);
+		}	
 	}
 
 	/**
@@ -54,10 +50,20 @@ export default function RecipeSearch(recipes) {
 		RenderRecipes(finalRecipe);
 	}
 
+	function handleSearchButtonClick(event) {
+		event.preventDefault();
+		filterRecipes();
+		RenderRecipes(finalRecipe);
+	}
+
 	/**
 	 * Filters the recipes based on the search input value.
 	 */
 	function filterRecipes() {
+		/**
+		 * The trim and lowercase search value.
+		 * @type {string}
+		 */
 		const searchValue = searchInput.value.trim().toLowerCase();
 
 		if (searchValue !== '') {
@@ -76,16 +82,23 @@ export default function RecipeSearch(recipes) {
 					);
 				});
 			});
-		// No search value, display all recipes
+		// No search value, displays all recipes
 		} else {
 			finalRecipe = recipes;
 		}
 	}
 
-	// Perform initial search handling
-	if (searchContainer && searchInput.value !== '') {
-		handleSearchInputInput();
-	} else if (searchContainer) {
-		RenderRecipes(recipes);
+	/**
+	 * Delays the execution of a function using the debounce technique.
+	 * Used the code from: https://www.freecodecamp.org/news/javascript-debounce-example/
+	 */
+	function debounce(func, timeout = 300) {
+		let timer;
+		return function (...args) {
+			clearTimeout(timer);
+			timer = setTimeout(() => {
+				func.apply(this, args);
+			}, timeout);
+		};
 	}
 }
