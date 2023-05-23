@@ -1,0 +1,59 @@
+.recipe-roulette {
+	margin: var(--gap-margin-x-large) 0;
+	padding: var(--gap-margin-large) 0;
+	background-color: var(--color-02);
+	align-items: center;
+}
+
+.recipe-roulette__recipe-card--blur {
+	position: relative;
+}
+
+.recipe-roulette__recipe-card--blur::before {
+	content: '';
+	border-radius: var(--border-radius-card);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px); /* Blur effect for safari*/
+	z-index: 1;
+}
+
+.recipe__roulette-button {
+	margin-top: var(--gap-margin-large);
+}
+
+.recipe-roulette__recipe {
+	width: 17.5rem;
+	margin: 0 auto;
+}
+
+.recipe-roulette__description {
+	margin: 2rem auto;
+	text-align: center;
+}
+
+.recipe-roulette__description p {
+	display: none;
+}
+
+@media screen and (min-width: 1040px) {
+	.recipe-roulette__description p {
+			display: block;
+			margin-top: 1rem;
+	}
+
+	.recipe-roulette__description {
+		margin: 0 auto;
+		text-align: left;
+	}
+
+	.recipe-roulette__recipe {
+		width: 100%;
+		margin: 0;
+	}
+	/* Fix so the recipe card is the same size as the card in recipe list */
+}

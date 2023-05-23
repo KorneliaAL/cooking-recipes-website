@@ -109,6 +109,10 @@
 	.grid__column-start-desktop--5 {
 		grid-column-start: 5;
 	}
+
+	.grid__column-start-desktop--9 {
+		grid-column-start: 9;
+	}
 }
 
 @media screen and (max-width: 1040px) {

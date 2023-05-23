@@ -4,15 +4,13 @@ export default function Categories(recipes) {
 	let activeButton = null;
 
 	const categoryContainer = document.querySelector('.category__navigation-list');
-/**
- * @Todo - fetch category image in fetch recipe
- */
+
 	if (categoryContainer) {
 		createCategoryButtons();
 	}
 
 	function createCategoryButtons() {
-		const categories = [];
+		const categories = []; 
 
 		categories.push({
 			id: 'all',
@@ -107,7 +105,6 @@ export default function Categories(recipes) {
 			categoryContainer.appendChild(categoryButtonElement);
 			returnCategoryDOMElement(category)
 		});
-		// console.log(categories);
 	}
 }
 
