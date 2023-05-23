@@ -53,7 +53,6 @@
 }
 
 .recipes__list-element-information {
-	background-color: var(--color-06);
 	padding: var(--gap-padding);
 	border: var(--border-recipes-card);
 	border-bottom-left-radius: var(--border-radius-card);
