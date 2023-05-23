@@ -4,7 +4,7 @@ Welcome to the Recipe Website! This website is a collection of various recipes t
 
 ## Getting Started
 
-To access the Recipe Website, simply click on the following link: [Recipe Website](https://main--bucolic-croissant-b1c4be.netlify.app/_app/recipes/index.html)
+To access the Recipe Website, simply click on the following link: [Recipe Website](https://yumdish.netlify.app/)
 
 ## Features
 
