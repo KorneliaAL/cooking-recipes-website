@@ -75,9 +75,9 @@ export default function RenderRecipes(recipes) {
 
 		recipeCardElement.classList.add('recipes__list-element', 'grid__column-mobile--12', 'grid__column--3');
 		recipeImageElement.classList.add('recipes__list-element-image');
-		recipeFavoriteButtonElement.classList.add('recipes__list-element-favorite-button');
+		recipeFavoriteButtonElement.classList.add('favorite-button', 'favorite-button__recipe-list');
 		if (favoriteButtonLocally.includes(recipeID)) {
-			recipeFavoriteButtonElement.classList.add('recipes__list-element-favorite-button--active');
+			recipeFavoriteButtonElement.classList.add('favorite-button--active');
 		}
 		recipeInformationContainerElement.classList.add('recipes__list-element-information');
 		recipeInformationTitleElement.classList.add('recipes__information-title');
