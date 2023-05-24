@@ -35,6 +35,10 @@
 	background-image: url(/_app/assets/icons/favorite-heart-filled.svg);
 }
 
+.recipes__list-element-favorite-button--active:hover {
+	background-image: url(/_app/assets/icons/favorite-heart.svg);
+}
+
 .recipes__information-time-icon {
 	height: 24px;
 	width: 24px;
