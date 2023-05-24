@@ -122,6 +122,11 @@
 }
 
 @media screen and (min-width: 768px){
+
+	.description__information {
+		margin: var(--gap-margin-medium) 0;
+	}
+
 	.description__ingredient-button:hover::before, .description__instruction-button:hover::before {
 		background-color: var(--color-01);
 	}
