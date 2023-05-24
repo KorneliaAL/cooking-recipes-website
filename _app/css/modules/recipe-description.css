@@ -41,24 +41,6 @@
 	background-image: url(/_app/assets/icons/cook-time.svg);
 }
 
-.description__information-favorite-button {
-	height: 40px;
-	width: 40px;
-	right: 0.5rem;
-	top: 0.5rem;
-	background-image: url(/_app/assets/icons/favorite-heart.svg);
-	transition: all 300ms ease-in-out;
-}
-
-.description__information-favorite-button:hover, .recipes__list-element-favorite-button--active {
-	background-image: url(/_app/assets/icons/favorite-heart-filled.svg);
-}
-
-/* 
-	@todo:  make new module with favorite button for recipe list 
-	and recipe description 
-*/
-
 .description__image {
 	object-fit: cover;
 	max-height: 40rem;
