@@ -1,0 +1,23 @@
+.favorite-button {
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 40px;
+	right: 0.5rem;
+	top: 0.5rem;
+	background-image: url(/_app/assets/icons/favorite-heart.svg);
+	transition: all 300ms ease-in-out;
+}
+
+.favorite-button__recipe-list {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+}
+
+.favorite-button--active, .favorite-button:hover {
+	background-image: url(/_app/assets/icons/favorite-heart-filled.svg);
+}
+
+.favorite-button--active:hover {
+	background-image: url(/_app/assets/icons/favorite-heart.svg);
+}
