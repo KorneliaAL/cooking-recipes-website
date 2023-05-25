@@ -131,6 +131,10 @@
 		font-size: var(--font-size-main-header-desktop);
 	}
 
+	.description__sub-title {
+		font-size: var(--font-size-sub-header-desktop);
+	}
+
 	.description__ingredient-button:hover::before, .description__instruction-button:hover::before {
 		background-color: var(--color-01);
 	}
