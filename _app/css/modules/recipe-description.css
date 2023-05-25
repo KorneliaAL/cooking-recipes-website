@@ -11,7 +11,7 @@
 }
 
 .description__information-title {
-	font-size: var(--font-size-main-header-desktop);
+	font-size: var(--font-size-main-header-mobile);
 }
 
 .description__information-fact {
@@ -125,6 +125,10 @@
 
 	.description__information {
 		margin: var(--gap-margin-medium) 0;
+	}
+
+	.description__information-title {
+		font-size: var(--font-size-main-header-desktop);
 	}
 
 	.description__ingredient-button:hover::before, .description__instruction-button:hover::before {
