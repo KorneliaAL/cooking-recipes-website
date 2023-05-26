@@ -1,0 +1,89 @@
+.favorite-button {
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 40px;
+	background-image: url(/_app/assets/icons/favorite-heart.svg);
+	transition: all 300ms ease-in-out;
+}
+
+.favorite-button__recipe-list {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+}
+
+.favorite-button--active {
+	background-image: url(/_app/assets/icons/favorite-heart-filled.svg);
+}
+
+.description__instruction-button,
+.description__ingredient-button {
+	position: relative;
+	padding-left: var(--gap-margin-large);
+	text-align: left;
+	transition: all 300ms ease-in-out;
+}
+
+.description__ingredient-button::before {
+	width: 10px;
+	height: 10px;
+}
+
+.description__instruction-button::before {
+	width: 20px;
+	height: 20px;
+}
+
+.description__instruction-button::before,
+.description__ingredient-button::before {
+	content: "";
+	position: absolute;
+	left: 0.62rem;
+	top: 12px;
+	transform: translate(-50%, -50%);
+	border: 1px solid var(--color-01);
+	border-radius: 100%;
+	transition: all 300ms ease-in-out
+}
+
+.description__instruction-button--active {
+	height: 25px;
+	overflow: hidden;
+	color: var(--color-04);
+	text-decoration: line-through;
+}
+
+.description__instruction-button--active::before {
+	background-color: var(--color-01);
+	transition: all 300ms ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+
+	.favorite-button:hover {
+			background-image: url(/_app/assets/icons/favorite-heart-filled.svg);
+		}
+	
+		.favorite-button--active:hover {
+			background-image: url(/_app/assets/icons/favorite-heart.svg);
+		}
+
+	.description__information-title {
+		font-size: var(--font-size-main-header-desktop);
+	}
+
+	.description__sub-title {
+		font-size: var(--font-size-sub-header-desktop);
+	}
+
+	.description__ingredient-button:hover::before,
+	.description__instruction-button:hover::before {
+		background-color: var(--color-01);
+	}
+
+	.description__ingredient-button:hover, 
+	.description__instruction-button:hover {
+		color: var(--color-04);
+		text-decoration: line-through;
+	}
+}

@@ -112,15 +112,9 @@ export default async function RenderRecipeDescription(recipes) {
 		descriptionTimeAmountElement.classList.add('description__iformation-amount');
 
 		if (favoriteButtonLocally.includes(recipeID)) {
-			descriptionFavoriteButtonElement.classList.add('recipes__list-element-favorite-button--active');
+			descriptionFavoriteButtonElement.classList.add('favorite-button--active');
 		}
-		descriptionFavoriteButtonElement.classList.add('description__information-favorite-button');
-		// descriptionFavoriteButtonIconElement.classList.add('description__favorite-button-icon');
-	
-		// descriptionFavoriteButtonElement.append(
-		// 	descriptionFavoriteButtonIconElement,
-		// 	descriptionFavoriteButtonTextElement
-		// );
+		descriptionFavoriteButtonElement.classList.add('favorite-button');
 
 		descriptionFactTimeElement.append(
 			descriptionTimeIconElement,

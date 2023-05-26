@@ -27,24 +27,22 @@
 	background-image: url(/_app/assets/icons/menu.svg);	
 }
 
-.main-header__search-button, .main-header__mobile-search-button {
-	background-image: url(/_app/assets/icons/search.svg);
-}
 
-.main-header__search-button, .main-header__menu {
+.main-header__menu {
 	display: none;
 }
 
 .main-header__menu--visible {
 	display: block;
 	height: 100vh;
+	margin-top: 3rem;
 }
 
 .main-header__menu--visible li {
-	border: 1px solid #000;
-	padding: var(--gap-margin-small);
+	padding: var(--gap-margin-medium);
 	width: 100%;
 	position: relative;
+	font-size: 25px;
 }
 
 .main-header__menu--visible a::after {

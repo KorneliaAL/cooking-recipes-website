@@ -1,0 +1,21 @@
+.search__form {
+	margin: 0 auto;
+	
+	border: 1px solid var(--color-01);
+	border-radius: var(--border-radius-card);
+	width: 50%;
+	display: flex;
+	align-items: center;
+}
+
+.search__input {
+	width: 100%;
+	padding: 0.5rem;
+}
+
+.search__button {
+	background-image: url(/_app/assets/icons/search.svg);
+	height: 24px;
+	width: 26px;
+	margin-right: 0.5rem;
+}
