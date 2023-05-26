@@ -24,7 +24,8 @@
 }
 
 .main-header__mobile-burger-button {
-	background-image: url(/_app/assets/icons/menu.svg);	
+	background-image: url(/_app/assets/icons/menu-2.svg);
+	background-repeat: no-repeat;	
 }
 
 
@@ -45,16 +46,6 @@
 	font-size: 25px;
 }
 
-.main-header__menu--visible a::after {
-	content: '';
-	background-image: url('/_app/assets/icons/chevron-right.svg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 3rem;
-	height: 3rem;
-}
-
 .main-header__menu--visible a {
 	/* border: 1px solid #000; */
 	width: 100%;
@@ -63,6 +54,11 @@
 .main-header__menu a{
 	margin-top: var(--gap-margin-small);
 	transition: all 300ms ease-in-out;
+}
+
+.main-header__icon {
+	display: inline-block;
+	margin-right: 1rem;
 }
 
 .main-header__mobile-buttons button{
@@ -89,13 +85,11 @@
 		border-bottom: 3px solid;
 	}
 
-	.main-header__mobile-buttons {
+	.main-header__icon {
 		display: none;
 	}
 
-	.main-header__search-button {
-		display: block;
+	.main-header__mobile-buttons {
+		display: none;
 	}
 }
-
-/* Todo: finn ut hvorfor navigation menu flytter på seg */
