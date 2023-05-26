@@ -21,10 +21,12 @@ export default function Header() {
 	function renderHTML() {
 		if (isCollapsed) {
 			navigationList.classList.add('main-header__menu--visible');
+			navigationButton.style.backgroundImage = 'url(/_app/assets/icons/exit.svg)';
 			// Disable scroll
 			document.body.classList.add('main-header--no-scroll');
 		} else {
 			navigationList.classList.remove('main-header__menu--visible');
+			navigationButton.style.backgroundImage = 'url(/_app/assets/icons/menu-2.svg)';
 			// Enable scroll
 			document.body.classList.remove('main-header--no-scroll');
 		}
