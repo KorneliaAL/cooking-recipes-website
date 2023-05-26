@@ -1,5 +1,5 @@
 export default function Header() {
-	let isCollapsed = false;
+	let navigationVisible = false;
 	const navigationButton = document.querySelector('.main-header__mobile-burger-button');
 	const navigationList = document.querySelector('.main-header__menu');
 	navigationButton.addEventListener('click', handleNavigationButtonClick);
@@ -10,7 +10,7 @@ export default function Header() {
 	 */
 
 	function handleNavigationButtonClick(event) {
-		isCollapsed = !isCollapsed;
+		navigationVisible = !navigationVisible;
 		renderHTML();
 	}
 
@@ -19,7 +19,7 @@ export default function Header() {
 	 */
 	
 	function renderHTML() {
-		if (isCollapsed) {
+		if (navigationVisible) {
 			navigationList.classList.add('main-header__menu--visible');
 			navigationButton.style.backgroundImage = 'url(/_app/assets/icons/exit.svg)';
 			navigationButton.setAttribute('aria-label', "Close Navigation Menu");
