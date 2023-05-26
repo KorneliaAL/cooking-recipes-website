@@ -67,7 +67,7 @@ export default function FavoriteButton(event) {
 	 */
 
 	function renderHTML() {
-		currentButton.classList.toggle('recipes__list-element-favorite-button--active');
+		currentButton.classList.toggle('favorite-button--active');
 	}
 
 	handleFavoriteButtonClick();

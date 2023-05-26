@@ -1,8 +1,12 @@
 .description__information {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	flex-flow: column wrap;
+}
+
+.description__information {
+	margin: var(--gap-margin-medium) 0;
 }
 
 .description__information-facts {
@@ -11,7 +15,7 @@
 }
 
 .description__information-title {
-	font-size: var(--font-size-main-header-desktop);
+	font-size: var(--font-size-main-header-mobile);
 }
 
 .description__information-fact {
@@ -41,24 +45,6 @@
 	background-image: url(/_app/assets/icons/cook-time.svg);
 }
 
-.description__information-favorite-button {
-	height: 40px;
-	width: 40px;
-	right: 0.5rem;
-	top: 0.5rem;
-	background-image: url(/_app/assets/icons/favorite-heart.svg);
-	transition: all 300ms ease-in-out;
-}
-
-.description__information-favorite-button:hover, .recipes__list-element-favorite-button--active {
-	background-image: url(/_app/assets/icons/favorite-heart-filled.svg);
-}
-
-/* 
-	@todo:  make new module with favorite button for recipe list 
-	and recipe description 
-*/
-
 .description__image {
 	object-fit: cover;
 	max-height: 40rem;
@@ -75,8 +61,8 @@
 }
 
 .description-ingredient-title {
-	margin-top: 1rem;
-	margin-bottom: 0.5rem;
+	margin-top: var(--gap-margin-medium);
+	margin-bottom: var(--gap-margin-small);
 }
 
 .description__instruction-list li {
@@ -84,53 +70,7 @@
 }
 
 .description__ingredients-list li {
-	margin-top: 0.5rem;
-}
-
-.description__instruction-button, .description__ingredient-button {
-	position: relative;
-	padding-left: var(--gap-margin-large);
-	text-align: left;
-	transition: all 300ms ease-in-out;
-}
-
-.description__ingredient-button::before {
-	width: 10px;
-	height: 10px;
-}
-
-.description__instruction-button::before {
-	width: 20px;
-	height: 20px;
-}
-
-.description__instruction-button::before, .description__ingredient-button::before {
-	content: "";
-	position: absolute;
-	left: 0.62rem;
-	top: 12px;
-	transform: translate(-50%, -50%);
-	border: 1px solid var(--color-01);
-	border-radius: 100%;
-	transition: all 300ms ease-in-out
-}
-
-.description__instruction-button--active {
-	height: 25px;
-	overflow: hidden;
-	color: var(--color-04);
-	text-decoration: line-through;
-}
-
-.description__instruction-button--active::before {
-	background-color: var(--color-01);
-	transition: all 300ms ease-in-out;
-}
-
-.description__instruction-button-dot, 
-.description__ingredient-button-dot {
-	border-radius: 50%;
-	border: 1px solid var(--color-01);
+	margin-top: var(--gap-margin-small);
 }
 
 @media screen and (min-width: 1040px) {
@@ -140,6 +80,33 @@
 }
 
 @media screen and (min-width: 768px){
+
+
+	.description__information-icon {
+		width: 40px;
+		height: 40px;
+	}
+
+	.description__calories-icon {
+		background-image: url(/_app/assets/icons/calories-40.svg);
+	}
+
+	.description__servings-icon {
+		background-image: url(/_app/assets/icons/servings-40.svg);
+	}
+
+	.description__time-icon {
+		background-image: url(/_app/assets/icons/cook-time-40.svg);
+	}
+
+	.description__information-title {
+		font-size: var(--font-size-main-header-desktop);
+	}
+
+	.description__sub-title {
+		font-size: var(--font-size-sub-header-desktop);
+	}
+
 	.description__ingredient-button:hover::before, .description__instruction-button:hover::before {
 		background-color: var(--color-01);
 	}

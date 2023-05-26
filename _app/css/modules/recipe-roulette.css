@@ -7,6 +7,7 @@
 
 .recipe-roulette__recipe-card--blur {
 	position: relative;
+	pointer-events: none;
 }
 
 .recipe-roulette__recipe-card--blur::before {
