@@ -1,4 +1,3 @@
-import HandleInstructionButtonClick from "./instruction-button.js";
 import FavoriteButton from "./favorite-button.js";
 import GetFavoriteRecipeLocally from "./get-favorite-recipe-locally.js";
 
@@ -16,14 +15,21 @@ export default async function RenderRecipeDescription(recipes) {
 	if (recipeDescription) {
 		const urlParams = new URLSearchParams(window.location.search);
 		const slug = urlParams.get('recipe');
-		
+
 		renderHTML(slug);
 	}
 
-	// function handleIngreientsButtonClick() {
-
-	// }
-
+	// Event handler
+	function handleInstructionButtonClick(event) {
+		const currentButton = event.target;
+		renderInstructionIngredientButton(currentButton);
+	}
+	// Event handler
+	function handleIngredientButtonClick(event) {
+		const currentButton = event.target;
+		renderInstructionIngredientButton(currentButton);
+	}
+	
 	/**
 	Returns the recipe information as DOM elements
 	@param {object} recipe - The recipe data object
@@ -60,9 +66,6 @@ export default async function RenderRecipeDescription(recipes) {
 		const descriptionTimeAmountElement = document.createElement('div');
 		const descriptionTimeTextElement = document.createElement('div');
 		const descriptionFavoriteButtonElement = document.createElement('button');
-		// const descriptionFavoriteButtonIconElement = document.createElement('div');
-		// const descriptionFavoriteButtonTextElement = document.createElement('div');
-
 
 		descriptionFavoriteButtonElement.addEventListener('click', FavoriteButton);
 
@@ -72,10 +75,7 @@ export default async function RenderRecipeDescription(recipes) {
 		descriptionCaloryUnitElement.textContent = caloryUnit;
 		descriptionServingsTextElement.textContent = servingsText;
 		descriptionTimeTextElement.textContent = timeText;
-		// descriptionFavoriteButtonTextElement.textContent = favoriteButtonText;
-		// descriptionFavoriteButtonTextElement.dataset.id = recipeID;
 		descriptionFavoriteButtonElement.dataset.id = recipeID;
-		// descriptionFavoriteButtonIconElement.dataset.id = recipeID;
 
 		descriptionTimeAmountElement.textContent = timeAmount;
 
@@ -215,10 +215,10 @@ export default async function RenderRecipeDescription(recipes) {
 
 			const ingredientListElement = document.createElement('li');
 			const ingredientButton = document.createElement('button');
-			// const ingredientButtonDot = document.createElement('div');
-			// const ingredientButtonTextContainer = document.createElement('div');
-			const ingredientButtonBoldText = document.createElement('b');
+			const ingredientButtonBoldText = document.createElement('span');
 			const ingredientButtonText = document.createElement('span');
+
+			ingredientButton.addEventListener('click', handleIngredientButtonClick);
 
 			ingredientButtonText.textContent = ingredientName;
 			ingredientButtonBoldText.textContent = `${ingredientAmount} ${ingredientUnit}`;
@@ -228,15 +228,8 @@ export default async function RenderRecipeDescription(recipes) {
 				ingredientButtonBoldText.textContent = `${ingredientAmount} `;
 			}
 
-			// ingredientButton.addEventListener('click', handleIngreientsButtonClick);
-
 			ingredientButton.classList.add('description__ingredient-button');
-			// ingredientButtonDot.classList.add('description__ingredient-button-dot');
-			// ingredientButtonTextContainer.classList.add('description__ingredient-button-text');
-
-			// ingredientButtonTextContainer.append(
-				
-			// 	);
+			ingredientButtonBoldText.classList.add('description__ingredient-button--bold');
 
 			ingredientButton.append(
 				ingredientButtonBoldText,
@@ -294,16 +287,9 @@ export default async function RenderRecipeDescription(recipes) {
 
 			instructionButton.textContent = instruction.step;
 
-			instructionButton.addEventListener('click', HandleInstructionButtonClick);
+			instructionButton.addEventListener('click', handleInstructionButtonClick);
 			
 			instructionButton.classList.add('description__instruction-button');
-			// instructionButtonDot.classList.add('description__instruction-button-dot');
-			// instructionButtonText.classList.add('description__instruction-button-text');
-
-			// instructionButton.append(
-			// 	instructionButtonDot,
-			// 	instructionButtonText
-			// );
 
 			instructionListItemElement.appendChild(instructionButton);
 
@@ -311,7 +297,6 @@ export default async function RenderRecipeDescription(recipes) {
 		});
 		return instructionsListContainer;
 	}
-
 
 	/**
 	Renders the HTML for a given recipe slug.
@@ -343,6 +328,10 @@ export default async function RenderRecipeDescription(recipes) {
 			descriptionIngredientsContainer,
 			descriptionInstructionContainer
 		);
+	}
+
+	function renderInstructionIngredientButton(button) {
+		button.classList.toggle('description__button--active');
 	}
 }
 
