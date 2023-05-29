@@ -25,12 +25,13 @@ export default async function RenderRecipeDescription(recipes) {
 		const currentButton = event.target;
 		renderInstructionIngredientButton(currentButton);
 	}
+
 	// Event handler
 	function handleIngredientButtonClick(event) {
 		const currentButton = event.target;
 		renderInstructionIngredientButton(currentButton);
 	}
-	
+
 	/**
 	Returns the recipe information as DOM elements
 	@param {object} recipe - The recipe data object
