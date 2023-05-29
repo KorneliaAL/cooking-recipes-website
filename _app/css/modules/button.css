@@ -30,6 +30,10 @@
 	pointer-events: none;
 }
 
+.description__ingredient-button--bold {
+	font-weight: 700;
+}
+
 .description__ingredient-button::before {
 	width: 10px;
 	height: 10px;
