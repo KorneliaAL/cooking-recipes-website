@@ -40,16 +40,17 @@ export default async function FetchRecipeData() {
     `;
 
 	async function getDataFromTryCatch(query) {
-		const errorMessage = document.querySelectorAll('.error-message');
+		const errorMessage = document.querySelector('.error-message');
+		const mainContainer = document.querySelector('main');
 		try {
 			const recipeData = await sanity.fetch(query);
 			return recipeData;
 		}
 		// Display error message from sanity-client.js
 		catch (error) {
-			errorMessage.forEach(message => {
-				message.textContent = error.message;
-			})
+			errorMessage.textContent = error.message;
+			errorMessage.classList.add('error-message--visible');
+			mainContainer.classList.add('main--hidden');
 		}
 	}
 
