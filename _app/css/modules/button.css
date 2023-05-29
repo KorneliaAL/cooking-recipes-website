@@ -4,6 +4,8 @@
 	width: 40px;
 	background-image: url(/_app/assets/icons/favorite-heart.svg);
 	transition: all 300ms ease-in-out;
+	color: transparent;
+	font-size: 1px;
 }
 
 .favorite-button__recipe-list {

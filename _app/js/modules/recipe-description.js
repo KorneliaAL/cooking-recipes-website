@@ -113,6 +113,9 @@ export default async function RenderRecipeDescription(recipes) {
 
 		if (favoriteButtonLocally.includes(recipeID)) {
 			descriptionFavoriteButtonElement.classList.add('favorite-button--active');
+			descriptionFavoriteButtonElement.textContent = 'Remove from favorites';
+		} else {
+			descriptionFavoriteButtonElement.textContent = 'Add to favorites';
 		}
 		descriptionFavoriteButtonElement.classList.add('favorite-button');
 
