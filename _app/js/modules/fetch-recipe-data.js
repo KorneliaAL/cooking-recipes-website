@@ -1,7 +1,11 @@
 import { sanity } from '../sanity.js';
 
+/**
+ * 
+ * @Todo add 
+ */
+
 export default async function FetchRecipeData() {
-	try {
 		const query = `
       *[ _type == 'cookingRecipes' ] {
         'slug': slug.current,
@@ -33,14 +37,20 @@ export default async function FetchRecipeData() {
       }
     `;
 
-		const params = {};
-
-		const recipeData = await sanity.fetch(query, params);
-
-		return recipeData;
-	} catch (error) {
-		console.error('An error occurred while fetching recipe data:', error);
-		// Handle the error or throw it to be handled in the calling code
-		throw error;
+	async function getDataFromTryCatch(query) {
+		const errorMessage = document.querySelectorAll('.error-message');
+		try {
+			const recipeData = await sanity.fetch(query);
+			return recipeData;
+		}
+		catch (error) {
+			errorMessage.forEach(message => {
+				message.textContent = error.message;
+			})
+		}
 	}
+
+	const fetchData = getDataFromTryCatch(query);
+
+	return fetchData;
 }
