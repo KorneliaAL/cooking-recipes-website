@@ -181,6 +181,11 @@ export default async function RenderRecipeDescription(recipes) {
 		return descriptionImageContainerElement;
 	}
 
+	/**
+	* Returns a DOM element containing the ingredient container.
+	* @returns {HTMLElement} The DOM element containing the ingredient container.
+	*/
+	
 	function returnIngredientContainerToDOMElement() {
 		const descriptionIngredients = document.createElement('div');
 		const ingredientMainTitle = document.createElement('h3');
