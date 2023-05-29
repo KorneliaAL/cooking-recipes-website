@@ -1,9 +1,11 @@
 import { sanity } from '../sanity.js';
 
 /**
- * 
- * @Todo add 
+ * Fetches recipe data from the server.
+ * If an error occurs during the fetch, a custom error message is displayed.
+ * @returns {Promise<object>} The recipe data.
  */
+
 
 export default async function FetchRecipeData() {
 		const query = `
@@ -43,6 +45,7 @@ export default async function FetchRecipeData() {
 			const recipeData = await sanity.fetch(query);
 			return recipeData;
 		}
+		// Display error message from sanity-client.js
 		catch (error) {
 			errorMessage.forEach(message => {
 				message.textContent = error.message;
