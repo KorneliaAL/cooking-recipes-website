@@ -76,9 +76,14 @@ export default function RenderRecipes(recipes) {
 		recipeCardElement.classList.add('recipes__list-element', 'grid__column-mobile--12', 'grid__column--3');
 		recipeImageElement.classList.add('recipes__list-element-image');
 		recipeFavoriteButtonElement.classList.add('favorite-button', 'favorite-button__recipe-list');
+		
 		if (favoriteButtonLocally.includes(recipeID)) {
 			recipeFavoriteButtonElement.classList.add('favorite-button--active');
+			recipeFavoriteButtonElement.textContent = 'Remove from favorites';
+		} else {
+			recipeFavoriteButtonElement.textContent = 'Add to favorites';
 		}
+
 		recipeInformationContainerElement.classList.add('recipes__list-element-information');
 		recipeInformationTitleElement.classList.add('recipes__information-title');
 		recipeInformationTimeContainerElement.classList.add('recipes__information-time');

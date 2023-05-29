@@ -28,9 +28,11 @@ export default function FavoriteButton(event) {
 		if (favoritesRecipe.includes(id)) {
 			// Recipe already in favorites, remove it
 			favoritesRecipe = favoritesRecipe.filter(recipeId => recipeId !== id);
+			currentButton.textContent = 'Add to favorites';
 		} else {
 			// Recipe not in favorites, add it
 			favoritesRecipe.push(id);
+			currentButton.textContent = 'Remove from favorites';
 		}
 
 		storeFavoriteRecipeLocally();
