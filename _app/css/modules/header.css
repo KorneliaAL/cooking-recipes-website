@@ -17,16 +17,16 @@
 	padding: var(--gap-margin-small);
 }
 
-.main-header__search-button,
-.main-header__mobile-burger-button, .main-header__mobile-search-button {
+.main-header__mobile-burger-button {
 	width: 1.4rem;
 	height: 1.4rem;
 }
 
 .main-header__mobile-burger-button {
-	background-image: url(/_app/assets/icons/menu.svg);	
+	background-image: url(/_app/assets/icons/menu-2.svg);
+	background-repeat: no-repeat;	
+	color: transparent;
 }
-
 
 .main-header__menu {
 	display: none;
@@ -45,27 +45,20 @@
 	font-size: 25px;
 }
 
-.main-header__menu--visible a::after {
-	content: '';
-	background-image: url('/_app/assets/icons/chevron-right.svg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 3rem;
-	height: 3rem;
-}
-
-.main-header__menu--visible a {
-	/* border: 1px solid #000; */
-	width: 100%;
-}
-
-.main-header__menu a{
+.main-header__link {
 	margin-top: var(--gap-margin-small);
 	transition: all 300ms ease-in-out;
 }
 
-.main-header__mobile-buttons button{
+.main-header__menu--visible .main-header__link {
+	width: 100%;
+}
+
+.main-header__link--active {
+	border-bottom: 3px solid;
+}
+
+.main-header__mobile-button button{
 	margin: var(--gap-margin-small);
 }
 
@@ -85,17 +78,11 @@
 		margin-right: var(--gap-margin-small);
 	}
 
-	.main-header__menu a:hover {
+	.main-header__menu .main-header__link:hover {
 		border-bottom: 3px solid;
 	}
 
-	.main-header__mobile-buttons {
+	.main-header__mobile-button {
 		display: none;
 	}
-
-	.main-header__search-button {
-		display: block;
-	}
 }
-
-/* Todo: finn ut hvorfor navigation menu flytter på seg */
