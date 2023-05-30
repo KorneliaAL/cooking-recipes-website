@@ -52,7 +52,7 @@ export default function RenderRecipes(recipes) {
 	function returnRecipeDOMElement(recipe) {
 		const recipeSlug = recipe.slug;
 		const recipeID = recipe.id;
-		const recipeURL = `/_app/recipe-description/index.html?recipe=${recipeSlug}`;
+		const recipeURL = `/recipe-description/index.html?recipe=${recipeSlug}`;
 		const recipeImageURL = recipe.image.imageURL;
 		const recipeName = recipe.recipeName;
 		const cookTime = recipe.cookTime;
@@ -126,13 +126,14 @@ export default function RenderRecipes(recipes) {
 				frontPageRecipesContainer.appendChild(recipeElement);
 			});
 		
+		// storedArray is parsed from the local storage using JSON.parse().
+		// The filter() method is used to check if each recipe.id exists within the storedArray.The includes() method is used to perform the existence check.
+		// The filteredRecipes array will contain the recipes whose IDs match the ones stored in storedArray.
 		} else if (favoritePageRecipesContainer) {
 			const filteredRecipes = recipes.filter(recipe => {
 				return favoriteButtonLocally.includes(recipe.id);
 			});
-			// storedArray is parsed from the local storage using JSON.parse().
-			// The filter() method is used to check if each recipe.id exists within the storedArray.The includes() method is used to perform the existence check.
-			// The filteredRecipes array will contain the recipes whose IDs match the ones stored in storedArray.
+			
 
 			filteredRecipes.forEach(recipe => {
 				const recipeElement = returnRecipeDOMElement(recipe);

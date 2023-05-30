@@ -35,7 +35,8 @@ export default async function FetchRecipeData() {
           'altText': altText,
           'imageURL': image.asset->url
         },
-        calories
+        calories,
+		  'metaTag': description
       }
     `;
 

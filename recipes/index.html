@@ -24,20 +24,34 @@
 						<a href="/index.html" class="main-header__link">Home</a>
 					</li>
 					<li>
-						<a href="/_app/recipes/index.html" class="main-header__link">Recipes</a>
+						<a href="/recipes/index.html" class="main-header__link main-header__link--active">Recipes</a>
 					</li>
 					<li>
-						<a href="/_app/favorite-recipe/index.html" class="main-header__link main-header__link--active">Favorites</a>
+						<a href="/favorite-recipe/index.html" class="main-header__link">Favorites</a>
 					</li>
 				</menu>
 			</nav>
 		</header>
+
 		<div class="error-message"></div>
+
 		<main class="grid">
+			<h2 class="grid__column-start--2 grid__column--10 grid__column-mobile--10">Recipes</h2>
+			<section class="search grid__column-start--2 grid__column--10 grid__column-mobile--10">
+				<div class="search__form">
+					<input type="text" class="search__input" placeholder="Search recipes..." />
+					<button class="search__button">Search</button>
+				</div>
+			</section>
+			<section class="category grid__column-start--2 grid__column--10 grid__column-mobile--10">
+				<h2 class="category__title">Categories</h2>
+				<nav class="category__navigation">
+					<ul class="category__navigation-list"></ul>
+				</nav>
+			</section>
 			<section class="recipes grid grid__column--12 grid__column-mobile--12">
-				<h2 class="recipes__main-title grid__column--11 grid__column-start--2 grid__column-mobile--11">Favorite
-					Recipes</h2>
-				<div class="recipes__list grid__column--12 grid__column-mobile--12 grid"></div>
+				<div class="recipes__list grid__column--12 grid__column-mobile--12 grid">
+				</div>
 			</section>
 		</main>
 	</body>

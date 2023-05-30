@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
 		<link rel="stylesheet" href="/_app/css/main.css">
 		<script type="module" src="/_app/js/main.js"></script>
-		<script src="https://kit.fontawesome.com/96cc410e09.js" crossorigin="anonymous"></script>
-		<title>Recipes</title>
+		<title><!-- Title inserted from recipe-description.js --></title>
 	</head>
+
 	<body>
 		<header class="main-header">
 			<div class="main-header__content">
@@ -21,7 +23,7 @@
 			<nav class="main-header__navigation">
 				<menu class="main-header__menu">
 					<li>
-						<a href="/index.html" class="main-header__link main-header__link--active">Home</a>
+						<a href="/index.html" class="main-header__link">Home</a>
 					</li>
 					<li>
 						<a href="/recipes/index.html" class="main-header__link">Recipes</a>
@@ -34,23 +36,8 @@
 		</header>
 		<div class="error-message"></div>
 		<main class="grid">
-			<section class="recipes grid grid__column--12 grid__column-mobile--12">
-				<h2 class="recipes__main-title grid__column--11 grid__column-start--2 grid__column-mobile--11">Delicious Recipes</h2>
-				<div class="recipes__list grid__column--12 grid__column-mobile--12 grid">
-					<!-- <a href="" class="recipes__list-element grid__column-mobile--12 grid__column--3">
-						<div class="recipes__list-element-image">
-							<button class="recipes__list-element-favorite-button"></button>
-						</div>
-						<div class="recipes__list-element-information">
-							<h3 class="recipes__information-title">Pizza With Pepperoni</h3>
-							<div class="recipes__information-time">
-								<div class="recipes__information-time-icon"></div>
-								<div>45 min</div>
-							</div>
-						</div>
-					</a> -->
-				</div>
-				<button class="recipes__see-more-button grid__column-start-desktop--5 grid__column--4 grid__column-mobile--12">see more</button>
+			<section class="description grid grid__column--12 grid__column-mobile--12">
+				<!-- recipe description inserted from description.js -->
 			</section>
 			<section class="recipe-roulette grid grid__column--12 grid__column-mobile--12">
 				<div class="grid__column-start-desktop--2 grid__column--6 grid__column-mobile--12 recipe-roulette__description">
@@ -58,12 +45,15 @@
 						What should I make for dinner today?
 					</h2>
 					<p>
-						Sometimes it's easier to know what you don't want than what you feel like eating. Let us give you a little push in the
+						Sometimes it's easier to know what you don't want than what you feel like eating. Let us give you a little push
+						in the
 						right direction: Try the dinner roulette!
 					</p>
 				</div>
 				<div class="recipe-roulette__recipe grid__column-mobile--12 grid__column--3 grid__column-start-desktop--9">
-					<div class="recipe-roulette__recipe-card"></div>
+					<div class="recipe-roulette__recipe-card">
+						<!-- Recipe card element inserted from recipe-list.js -->
+					</div>
 					<button class="recipes__see-more-button recipe__roulette-button">Surprise me</button>
 				</div>
 			</section>
