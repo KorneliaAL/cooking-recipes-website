@@ -288,12 +288,10 @@ export default async function RenderRecipeDescription(recipes) {
 
 			const instructionListItemElement = document.createElement('li');
 			const instructionButton = document.createElement('button');
-			// const instructionButtonDot = document.createElement('div');
-			// const instructionButtonText = document.createElement('div');
-
-			instructionButton.textContent = instruction.step;
 
 			instructionButton.addEventListener('click', handleInstructionButtonClick);
+
+			instructionButton.textContent = instruction.step;
 			
 			instructionButton.classList.add('description__instruction-button');
 
@@ -317,10 +315,15 @@ export default async function RenderRecipeDescription(recipes) {
 		const recipeDescriptionImage = returnRecipeImageToDOMElement(currentRecipeDescription);
 		const descriptionIngredientsContainer = returnIngredientContainerToDOMElement();
 		const descriptionInstructionContainer = returnInstructionContainerToDOMElement();
-		const recipeInstructions = returnRecipeInstructionToDOMElement(currentRecipeDescription)
+		const recipeInstructions = returnRecipeInstructionToDOMElement(currentRecipeDescription);
+
 		const currentMetaTag = currentRecipeDescription.metaTag;
-		
+		const name = currentRecipeDescription.recipeName;
+		const category = currentRecipeDescription.category.name;
+		const headTitle = `${name} | YumDish | ${category}`;
+
 		metaTag.setAttribute("content", currentMetaTag);
+		document.title = headTitle;
 
 		currentRecipeDescription.ingredients.forEach(ingredient => {
 			const ingredientsList = returnRecipeIngredientsToDOMElement(ingredient);
@@ -328,7 +331,7 @@ export default async function RenderRecipeDescription(recipes) {
 			descriptionIngredientsContainer.appendChild(ingredientsList);
 		});
 
-		descriptionInstructionContainer.append(recipeInstructions)		
+		descriptionInstructionContainer.append(recipeInstructions);		
 
 		recipeDescription.append(
 			recipeDescriptonInformation,
