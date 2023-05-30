@@ -324,6 +324,7 @@ export default async function RenderRecipeDescription(recipes) {
 		document.title = headTitle;
 		
 		metaTag.setAttribute("content", currentMetaTag);
+		document.title = headTitle;
 
 		currentRecipeDescription.ingredients.forEach(ingredient => {
 			const ingredientsList = returnRecipeIngredientsToDOMElement(ingredient);
