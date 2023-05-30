@@ -8,10 +8,12 @@ To access the website, simply click on the following link: [YumDish](https://yum
 
 ## Features
 
-- Recipe Categories: Browse recipes by different categories such as appetizers, main courses, desserts, and more.
-- Search Functionality: Use the search bar to find recipes based on specific category or dish names.
-- Recipe Details: Click on a recipe to view its detailed instructions, ingredients, cooking time, calories and servings.
-- Favorites: Save your favorite recipes for quick access in the future.
+- **Recipe Categories**: Browse recipes by different categories such as breakfast, dinner, desserts, and more.
+- **Search Functionality**: Use the search bar to find recipes based on specific category or dish names.
+- **Recipe Details**: Click on a recipe to view its detailed instructions, ingredients, cooking time, calories, and servings.
+- **Favorites**: Save your favorite recipes for quick access in the future.
+- **Instruction Progress**: Mark instructions as done to keep track of your progress while cooking.
+- **Ingredient Tracking**: Mark ingredients as used to stay organized during the cooking process.
 
 
 ## Technologies Used
