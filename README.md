@@ -29,3 +29,7 @@ The Recipe Website is built using the following technologies:
 ## MVP (Minimum Viable Product)
 
 In this MVP, the focus is on displaying a list of recipes and providing recipe details on separate pages. Each recipe page contains all the necessary information, such as ingredients, instructions, and cooking time, in a structured format. 
+
+## Access 
+Access the repository using:
+- `http://localhost:3000`
