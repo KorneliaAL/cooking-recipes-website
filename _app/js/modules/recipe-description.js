@@ -10,6 +10,7 @@ Renders the recipe description on the webpage
 export default async function RenderRecipeDescription(recipes) {
 
 	const recipeDescription = document.querySelector('.description');
+	const metaTag = document.querySelector('meta[name="description"]');
 	const favoriteButtonLocally = GetFavoriteRecipeLocally();
 	 // Get the slug value from the URL parameters
 	if (recipeDescription) {
@@ -46,8 +47,8 @@ export default async function RenderRecipeDescription(recipes) {
 		const servingsText = 'servings';
 		const timeAmount = recipe.cookTime;
 		const timeText = 'min';
-		// const favoriteButtonText = 'save to favorites';
 		const recipeID = recipe.id;
+		const metaTagDescription = recipe.metaTag;
 
 		// Creates the DOM elements for the recipe information
 		const descriptionInformationElement = document.createElement('div');
@@ -317,7 +318,9 @@ export default async function RenderRecipeDescription(recipes) {
 		const descriptionIngredientsContainer = returnIngredientContainerToDOMElement();
 		const descriptionInstructionContainer = returnInstructionContainerToDOMElement();
 		const recipeInstructions = returnRecipeInstructionToDOMElement(currentRecipeDescription)
-
+		const currentMetaTag = currentRecipeDescription.metaTag;
+		
+		metaTag.setAttribute("content", currentMetaTag);
 
 		currentRecipeDescription.ingredients.forEach(ingredient => {
 			const ingredientsList = returnRecipeIngredientsToDOMElement(ingredient);
