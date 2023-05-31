@@ -1,6 +1,7 @@
 /**
  * Represents a favorite button.
  * @param {Event} event - The event that triggered the button click.
+ * @todo Implement visual removal of the favorite recipe on the favorite page
  */
 
 export default function FavoriteButton(event) {
