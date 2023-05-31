@@ -110,15 +110,26 @@ export default function RenderRecipes(recipes) {
 		return recipeCardElement;		
 	}
 
-	// console.log(recipes[0]);
-
+	function getEightElements(recipes) {
+		const result = [];
+		for (let index = 0; index < 8; index+= 1) {
+			if (index < recipes.length) {
+				result.push(recipes[index]);
+			}
+		}
+		return result;
+	}
 	/**
 	Renders HTML for each recipe in the recipes array
 	*/
 	function renderHTML() {
-
 		if (frontPageRecipesContainer) {
-			frontPageRecipesContainer.textContent = '';
+			const firstEightRecipes = getEightElements(recipes);
+
+			firstEightRecipes.forEach(recipe => {
+				const recipeElement = returnRecipeDOMElement(recipe);
+				frontPageRecipesContainer.appendChild(recipeElement);
+			});
 		}
 
 		// Displays all the recipes
@@ -130,15 +141,14 @@ export default function RenderRecipes(recipes) {
 				recipePageRecipesContainer.appendChild(recipeElement);
 			});
 		
-		// storedArray is parsed from the local storage using JSON.parse().
-		// The filter() method is used to check if each recipe.id exists within the storedArray.The includes() method is used to perform the existence check.
-		// The filteredRecipes array will contain the recipes whose IDs match the ones stored in storedArray.
+		// favoriteRecipes is parsed from the local storage using JSON.parse().
+		// The filter() method is used to check if each recipe.id exists within the favoriteRecipes.The includes() method is used to perform the existence check.
+		// The filteredRecipes array will contain the recipes whose IDs match the ones stored in favoriteRecipes.
 		} else if (favoritePageRecipesContainer) {
 			const filteredRecipes = recipes.filter(recipe => {
 				return favoriteRecipes.includes(recipe.id);
 			});
-			
-
+		
 			filteredRecipes.forEach(recipe => {
 				const recipeElement = returnRecipeDOMElement(recipe);
 
