@@ -6,13 +6,14 @@ Renders a list of recipes on the page.
 */
 
 export default function RenderRecipes(recipes) {
-	const frontPageRecipesContainer = document.querySelector('.recipes__list');
+	const frontPageRecipesContainer = document.querySelector('.recipes__front-page');
 	const favoritePageRecipesContainer = document.querySelector('.recipes__favorite-list');
+	const recipePageRecipesContainer = document.querySelector('.recipes__recipes-page');
 	const recipeRouletteContainer = document.querySelector('.recipe-roulette__recipe-card');
 	const rouletteButton = document.querySelector('.recipe__roulette-button');
-	const favoriteButtonLocally = GetFavoriteRecipeLocally();
+	const favoriteRecipes = GetFavoriteRecipeLocally();
 
-	if (frontPageRecipesContainer || favoritePageRecipesContainer) {
+	if (frontPageRecipesContainer || favoritePageRecipesContainer || recipePageRecipesContainer) {
 		renderHTML();
 	}
 
@@ -77,7 +78,7 @@ export default function RenderRecipes(recipes) {
 		recipeImageElement.classList.add('recipes__list-element-image');
 		recipeFavoriteButtonElement.classList.add('favorite-button', 'favorite-button__recipe-list');
 		
-		if (favoriteButtonLocally.includes(recipeID)) {
+		if (favoriteRecipes.includes(recipeID)) {
 			recipeFavoriteButtonElement.classList.add('favorite-button--active');
 			recipeFavoriteButtonElement.textContent = 'Remove from favorites';
 		} else {
@@ -109,32 +110,45 @@ export default function RenderRecipes(recipes) {
 		return recipeCardElement;		
 	}
 
-	// console.log(recipes[0]);
-
+	function getEightElements(recipes) {
+		const result = [];
+		for (let index = 0; index < 8; index+= 1) {
+			if (index < recipes.length) {
+				result.push(recipes[index]);
+			}
+		}
+		return result;
+	}
 	/**
 	Renders HTML for each recipe in the recipes array
 	*/
 	function renderHTML() {
+		if (frontPageRecipesContainer) {
+			const firstEightRecipes = getEightElements(recipes);
 
-		if (frontPageRecipesContainer) {
-			frontPageRecipesContainer.textContent = '';
+			firstEightRecipes.forEach(recipe => {
+				const recipeElement = returnRecipeDOMElement(recipe);
+				frontPageRecipesContainer.appendChild(recipeElement);
+			});
 		}
-		if (frontPageRecipesContainer) {
+
+		// Displays all the recipes
+		if (recipePageRecipesContainer) {
+			recipePageRecipesContainer.textContent = '';
 			recipes.forEach(recipe => {
 				const recipeElement = returnRecipeDOMElement(recipe);
 
-				frontPageRecipesContainer.appendChild(recipeElement);
+				recipePageRecipesContainer.appendChild(recipeElement);
 			});
 		
-		// storedArray is parsed from the local storage using JSON.parse().
-		// The filter() method is used to check if each recipe.id exists within the storedArray.The includes() method is used to perform the existence check.
-		// The filteredRecipes array will contain the recipes whose IDs match the ones stored in storedArray.
+		// favoriteRecipes is parsed from the local storage using JSON.parse().
+		// The filter() method is used to check if each recipe.id exists within the favoriteRecipes.The includes() method is used to perform the existence check.
+		// The filteredRecipes array will contain the recipes whose IDs match the ones stored in favoriteRecipes.
 		} else if (favoritePageRecipesContainer) {
 			const filteredRecipes = recipes.filter(recipe => {
-				return favoriteButtonLocally.includes(recipe.id);
+				return favoriteRecipes.includes(recipe.id);
 			});
-			
-
+		
 			filteredRecipes.forEach(recipe => {
 				const recipeElement = returnRecipeDOMElement(recipe);
 

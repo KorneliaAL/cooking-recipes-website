@@ -274,8 +274,8 @@ export default async function RenderRecipeDescription(recipes) {
 	/**
 	Returns a DOM element containing the instructions of a recipe.
 	@param {Object} recipe - An object containing the information of the current recipe.
-	@param {Array} recipe.instructions - An array of instructions of a recipe.
-	@param {string} recipe.instructions.step - A string containing the instruction text of a recipe.
+	@param {Array} recipe.instructions - An array of recipe instructions.
+	@param {string} recipe.instructions.step - A string containing the instruction content.
 	
 	@returns {HTMLUListElement} A DOM element containing the instructions of a recipe.
 	*/
@@ -303,7 +303,7 @@ export default async function RenderRecipeDescription(recipes) {
 	}
 
 	/**
-	Renders the HTML for a given recipe slug.
+	Displays the recipe description based on the URL param
 	@param {string} slug - The slug of the recipe to render.
 	@returns {void}
 	*/
