@@ -1,58 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="/_app/css/main.css">
-		<script type="module" src="/_app/js/main.js"></script>
-		<title>Recipes</title>
-	</head>
 
-	<body>
-		<header class="main-header">
-			<div class="main-header__content">
-				<a href="/index.html">
-					<h1>YumDish</h1>
-				</a>
-				<div class="main-header__mobile-button">
-					<button class="main-header__mobile-burger-button">Open Navigation Menu</button>
-				</div>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Explore our extensive collection of categories, allowing you to filter and find recipes 
+      that suit your taste and dietary preferences. Can't find what you're looking for? Our powerful search function ensures you'll 
+      never be far from your next culinary adventure. Get ready to satisfy your cravings and elevate your cooking game with YumDish, 
+      your go-to recipe website for flavorful inspiration.">
+
+	<link rel="stylesheet" href="/_app/css/main.css">
+	<script type="module" src="/_app/js/main.js"></script>
+	<title>YumDish - your go-to recipe destination</title>
+</head>
+
+<body>
+	<header class="main-header">
+		<div class="main-header__content">
+			<a href="/index.html">
+				<h1>YumDish</h1>
+			</a>
+			<div class="main-header__mobile-button">
+				<button class="main-header__mobile-burger-button">Open Navigation Menu</button>
 			</div>
-			<nav class="main-header__navigation">
-				<menu class="main-header__menu">
-					<li>
-						<a href="/index.html" class="main-header__link">Home</a>
-					</li>
-					<li>
-						<a href="/recipes/index.html" class="main-header__link main-header__link--active">Recipes</a>
-					</li>
-					<li>
-						<a href="/favorite-recipe/index.html" class="main-header__link">Favorites</a>
-					</li>
-				</menu>
+		</div>
+		<nav class="main-header__navigation">
+			<menu class="main-header__menu">
+				<li>
+					<a href="/index.html" class="main-header__link">Home</a>
+				</li>
+				<li>
+					<a href="/recipes/index.html" class="main-header__link main-header__link--active">Recipes</a>
+				</li>
+				<li>
+					<a href="/favorite-recipe/index.html" class="main-header__link">Favorites</a>
+				</li>
+			</menu>
+		</nav>
+	</header>
+
+	<div class="error-message"></div>
+
+	<main class="grid">
+		<h2 class="grid__column-start--2 grid__column--10 grid__column-mobile--10">Recipes</h2>
+		<section class="search grid__column-start--2 grid__column--10 grid__column-mobile--10">
+			<div class="search__form">
+				<input type="text" class="search__input" placeholder="Search recipes..." />
+				<button class="search__button">Search</button>
+			</div>
+		</section>
+		<section class="category grid__column-start--2 grid__column--10 grid__column-mobile--10">
+			<h2 class="category__title">Categories</h2>
+			<nav class="category__navigation">
+				<ul class="category__navigation-list">
+					<!-- Category buttons inserted from categories.js -->
+				</ul>
 			</nav>
-		</header>
-
-		<div class="error-message"></div>
-
-		<main class="grid">
-			<h2 class="grid__column-start--2 grid__column--10 grid__column-mobile--10">Recipes</h2>
-			<section class="search grid__column-start--2 grid__column--10 grid__column-mobile--10">
-				<div class="search__form">
-					<input type="text" class="search__input" placeholder="Search recipes..." />
-					<button class="search__button">Search</button>
-				</div>
-			</section>
-			<section class="category grid__column-start--2 grid__column--10 grid__column-mobile--10">
-				<h2 class="category__title">Categories</h2>
-				<nav class="category__navigation">
-					<ul class="category__navigation-list"></ul>
-				</nav>
-			</section>
-			<section class="recipes grid grid__column--12 grid__column-mobile--12">
-				<div class="recipes__list grid__column--12 grid__column-mobile--12 grid">
-				</div>
-			</section>
-		</main>
-	</body>
+		</section>
+		<section class="recipes grid grid__column--12 grid__column-mobile--12">
+			<div class="recipes__list grid__column--12 grid__column-mobile--12 grid">
+				<!-- Recipes inserted from recipes-list.js -->
+			</div>
+		</section>
+	</main>
+</body>
 </html>
