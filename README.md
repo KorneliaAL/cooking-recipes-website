@@ -33,3 +33,6 @@ In this MVP, the focus is on displaying a list of recipes and providing recipe d
 ## Access 
 Access the repository using:
 - `http://localhost:3000`
+
+## Github
+- `https://github.com/KorneliaAL/cooking-recipes-website.git`
