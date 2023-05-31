@@ -9,6 +9,10 @@ export default function Categories(recipes) {
 		createCategoryButtons();
 	}
 
+	/**
+  	* Creates category buttons based on the unique categories found in the recipes array.
+	* Also creates a category with all recipes
+  	*/
 	function createCategoryButtons() {
 		const categories = []; 
 
@@ -24,7 +28,7 @@ export default function Categories(recipes) {
 		recipes.forEach(recipe => {
 			const category = recipe.category;
 
-			// Check if the category button is already created
+			// Checks if the category button already exist
 			if (!categories.some(existingCategory => existingCategory.id === category.id)) {
 				categories.push(category);
 			}
@@ -33,6 +37,10 @@ export default function Categories(recipes) {
 		renderHTML(categories);
 	}
 
+	/**
+	* Handles the button click event and renders recipes based on the selected category.
+	* @param {Event} event - The click event object.
+	*/
 
 	function handleButtonElementClick(event) {
 		const currentCategoryName = event.target.dataset.category;
@@ -53,6 +61,12 @@ export default function Categories(recipes) {
 
 		
 	}
+
+	/**
+	* Creates a DOM element for a category and returns it.
+	* @param {Object} category - The category object.
+	* @returns {HTMLElement} The DOM element representing the category.
+	*/
 
 	function returnCategoryDOMElement(category) {
 		const categoryName = category.name;
@@ -89,6 +103,7 @@ export default function Categories(recipes) {
 		return listItemElement;
 	}
 
+	// Renders the active state for the selected category button.
 	function renderCategory(button) {
 
 		if(activeButton) {
@@ -99,6 +114,7 @@ export default function Categories(recipes) {
 		activeButton = button;
 	}
 
+	// Renders the category buttons on the page
 	function renderHTML(categories) {
 		categories.forEach(category => {
 			const categoryButtonElement = returnCategoryDOMElement(category);
