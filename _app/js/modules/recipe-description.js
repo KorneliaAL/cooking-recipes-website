@@ -12,7 +12,7 @@ export default async function RenderRecipeDescription(recipes) {
 	const recipeDescription = document.querySelector('.description');
 	const metaTag = document.querySelector('meta[name="description"]');
 	const favoriteButtonLocally = GetFavoriteRecipeLocally();
-	 // Get the slug value from the URL parameters
+	 // Get the slug value from the URL param
 	if (recipeDescription) {
 		const urlParams = new URLSearchParams(window.location.search);
 		const slug = urlParams.get('recipe');
