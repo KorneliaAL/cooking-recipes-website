@@ -49,7 +49,6 @@ export default async function RenderRecipeDescription(recipes) {
 		const timeAmount = recipe.cookTime;
 		const timeText = 'min';
 		const recipeID = recipe.id;
-		const metaTagDescription = recipe.metaTag;
 
 		// Creates the DOM elements for the recipe information
 		const descriptionInformationElement = document.createElement('div');
@@ -317,12 +316,14 @@ export default async function RenderRecipeDescription(recipes) {
 		const descriptionIngredientsContainer = returnIngredientContainerToDOMElement();
 		const descriptionInstructionContainer = returnInstructionContainerToDOMElement();
 		const recipeInstructions = returnRecipeInstructionToDOMElement(currentRecipeDescription);
-
 		const currentMetaTag = currentRecipeDescription.metaTag;
 		const name = currentRecipeDescription.recipeName;
 		const category = currentRecipeDescription.category.name;
 		const headTitle = `${name} | YumDish | ${category}`;
 
+		metaTag.setAttribute("content", currentMetaTag);
+		document.title = headTitle;
+		
 		metaTag.setAttribute("content", currentMetaTag);
 		document.title = headTitle;
 
