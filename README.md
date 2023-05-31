@@ -34,5 +34,8 @@ In this MVP, the focus is on displaying a list of recipes and providing recipe d
 Access the repository using:
 - `http://localhost:3000`
 
+Studio deployed to:
+- `https://yumdish.sanity.studio/`
+
 ## Github
 - `https://github.com/KorneliaAL/cooking-recipes-website.git`
