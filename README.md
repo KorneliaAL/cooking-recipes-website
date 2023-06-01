@@ -54,5 +54,3 @@ Studio deployed to:
 
 **GitHub project**
 - `https://github.com/users/KorneliaAL/projects/3`
-
-
