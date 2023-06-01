@@ -27,8 +27,10 @@ The Recipe Website is built using the following technologies:
 - Netlify (for deployment)
 
 ## MVP (Minimum Viable Product)
-
-In this MVP, the focus is on displaying a list of recipes and providing recipe details on separate pages. Each recipe page contains all the necessary information, such as ingredients, instructions, and cooking time, in a structured format. 
+- Recipe Listing Page: A page that displays a list of recipes in a grid or list format. Each recipe should include a photo, name and
+cooking time. 
+- Recipe Details: When a user clicks on a recipe, they can view the ingredients, cooking instructions, serving size and calories. 
+- Responsive Design: A website design that is optimized for desktop and mobile devices. Users should be able to access the website and browse recipes from any device.
 
 ## Access 
 Access the repository using:
