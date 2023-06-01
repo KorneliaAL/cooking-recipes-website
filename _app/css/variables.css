@@ -14,14 +14,13 @@
 	--color-background: var(--color-06);
 
 	/* Border variables */
-	--border-radius-button: 0.5rem;
 	--border-radius-card: 0.5rem;
 	--border-radius-image-button: 50%;
 	--border-recipes-card: 1px solid var(--color-05);
+	--border-header-buttom: 2px solid;
 
 	/* Gap variables */
 	--gap-column: 0.5rem;
-	--gap-row: 0.5rem;
 	--gap-padding: 1rem;
 	--gap-margin-x-small: 0.25rem;
 	--gap-margin-small: 0.5rem;
@@ -33,9 +32,10 @@
 	/* Font variables */
 	--font-size-main-header-desktop: 3.2rem;
 	--font-size-main-header-mobile: 2rem;
-	--font-size-main-body-desktop: 1rem;
 	--font-size-sub-header-desktop: 2rem;
 	--font-size-sub-header-mobile: 1.4rem;
+	--font-size-medium: 1.25rem;
 	--font-size-small: 0.8rem;
 	--font-size-x-small: 0.6rem;
+	
 }
