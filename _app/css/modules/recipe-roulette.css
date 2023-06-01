@@ -41,7 +41,7 @@
 	display: none;
 }
 
-@media screen and (min-width: 1040px) {
+@media screen and (min-width: 1024px) {
 	.recipe-roulette__description p {
 			display: block;
 			margin-top: 1rem;

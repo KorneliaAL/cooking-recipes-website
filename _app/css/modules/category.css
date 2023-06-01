@@ -39,7 +39,7 @@
 	font-weight: bold;
 }
 
-@media screen and (min-width: 1040px) {
+@media screen and (min-width: 1024px) {
 	.category, .category__navigation {
 		margin-top: var(--gap-large);
 	}
