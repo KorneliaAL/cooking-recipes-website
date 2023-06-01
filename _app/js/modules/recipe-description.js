@@ -12,7 +12,7 @@ export default async function RenderRecipeDescription(recipes) {
 	const recipeDescription = document.querySelector('.description');
 	const metaTag = document.querySelector('meta[name="description"]');
 	const favoriteButtonLocally = GetFavoriteRecipeLocally();
-	 // Get the slug value from the URL parameters
+	 // Get the slug value from the URL param
 	if (recipeDescription) {
 		const urlParams = new URLSearchParams(window.location.search);
 		const slug = urlParams.get('recipe');
@@ -272,12 +272,12 @@ export default async function RenderRecipeDescription(recipes) {
 	}
 
 	/**
-	Returns a DOM element containing the instructions of a recipe.
-	@param {Object} recipe - An object containing the information of the current recipe.
-	@param {Array} recipe.instructions - An array of recipe instructions.
-	@param {string} recipe.instructions.step - A string containing the instruction content.
-	
-	@returns {HTMLUListElement} A DOM element containing the instructions of a recipe.
+	 * Returns a DOM element containing the instructions of a recipe.
+	 * @param {Object} recipe - An object containing the information of the current recipe.
+	 * @param {Array} recipe.instructions - An array of recipe instructions.
+	 * @param {string} recipe.instructions.step - A string containing the instruction content.
+	 * 
+	 * @returns {HTMLUListElement} A DOM element containing the instructions of a recipe.
 	*/
 
 	function returnRecipeInstructionToDOMElement(recipe) {
@@ -299,18 +299,18 @@ export default async function RenderRecipeDescription(recipes) {
 
 			instructionsListContainer.appendChild(instructionListItemElement);
 		});
+		
 		return instructionsListContainer;
 	}
 
 	/**
-	Displays the recipe description based on the URL param
-	@param {string} slug - The slug of the recipe to render.
-	@returns {void}
+	 * Displays the recipe description based on the URL param
+	 * @param {string} slug - The slug of the recipe to render.
 	*/
 
 	function renderHTML(slug) {
+		// Find the recipe with the matching slug
 		const currentRecipeDescription = recipes.find(recipe => recipe.slug === slug);
-
 		const recipeDescriptonInformation = returnRecipeInfoToDOMElement(currentRecipeDescription);
 		const recipeDescriptionImage = returnRecipeImageToDOMElement(currentRecipeDescription);
 		const descriptionIngredientsContainer = returnIngredientContainerToDOMElement();
@@ -321,20 +321,22 @@ export default async function RenderRecipeDescription(recipes) {
 		const category = currentRecipeDescription.category.name;
 		const headTitle = `${name} | YumDish | ${category}`;
 
+		// Set the document title based on recipe name and category
 		metaTag.setAttribute("content", currentMetaTag);
-		document.title = headTitle;
-		
-		metaTag.setAttribute("content", currentMetaTag);
+		// Set the meta tag content
 		document.title = headTitle;
 
+		// Append ingredients to the ingredient container
 		currentRecipeDescription.ingredients.forEach(ingredient => {
 			const ingredientsList = returnRecipeIngredientsToDOMElement(ingredient);
 
 			descriptionIngredientsContainer.appendChild(ingredientsList);
 		});
 
+		// Append recipe instructions to the instruction container
 		descriptionInstructionContainer.append(recipeInstructions);		
 
+		// Append all elements to the recipe description container
 		recipeDescription.append(
 			recipeDescriptonInformation,
 			recipeDescriptionImage,

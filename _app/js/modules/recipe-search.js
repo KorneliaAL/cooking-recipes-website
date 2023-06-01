@@ -29,7 +29,6 @@ export default function RecipeSearch(recipes) {
 
 	if (searchContainer) {
 		// Event listeners
-
 		searchInput.addEventListener('input', debounce(handleSearchInputInput));
 		searchButton.addEventListener('click', handleSearchButtonClick);
 		searchInput.addEventListener('keyup', handleEnterKeyup);
@@ -42,9 +41,6 @@ export default function RecipeSearch(recipes) {
 		}	
 	}
 
-	/**
-	 * Handles the debounced search input event.
-	 */
 	function handleSearchInputInput() {
 		filterRecipes();
 		RenderRecipes(finalRecipe);
@@ -60,12 +56,10 @@ export default function RecipeSearch(recipes) {
 	 * Filters the recipes based on the search input value.
 	 */
 	function filterRecipes() {
-		/**
-		 * The trim and lowercase search value.
-		 * @type {string}
-		 */
+		// Extracts the search value from the search input element and normalizes it
 		const searchValue = searchInput.value.trim().toLowerCase();
 
+		// Filters the recipeSearchData array based on whether the recipe name or category includes the search value
 		if (searchValue !== '') {
 			searchResults = recipeSearchData.filter((recipe) => {
 				return (

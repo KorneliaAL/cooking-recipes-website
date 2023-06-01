@@ -1,8 +1,8 @@
 import FavoriteButton from "./favorite-button.js";
 import GetFavoriteRecipeLocally from "./get-favorite-recipe-locally.js";
 /**
-Renders a list of recipes on the page.
-@param {Array} recipes - An array of objects containing recipe information.
+* Renders a list of recipes on the page.
+* @param {Array} recipes - An array of objects containing recipe information.
 */
 
 export default function RenderRecipes(recipes) {
@@ -35,13 +35,18 @@ export default function RenderRecipes(recipes) {
 		renderRouletteRecipe(recipeRoulette);
 	}
 
+	/**
+	 * Retrieves a random recipe.
+	 * @returns {Object} Random recipe with the category "Dinner".
+	*/
+
 	function getRandomRecipe() {
 		const dinnerRecipes = recipes.filter(recipe => {
 			return recipe.category.name === 'Dinner';
 		});
 
-		const randomRecipeindex = Math.floor(Math.random() * dinnerRecipes.length);
-		const recipeRoulette = dinnerRecipes[randomRecipeindex];
+		const randomRecipeIndex = Math.floor(Math.random() * dinnerRecipes.length);
+		const recipeRoulette = dinnerRecipes[randomRecipeIndex];
 
 		return recipeRoulette
 	}
@@ -50,6 +55,12 @@ export default function RenderRecipes(recipes) {
 		recipeRouletteContainer.classList.add('recipe-roulette__recipe-card--blur');
 	}
 
+
+	/**
+	* Returns a DOM element representing a recipe.
+	* @param {Object} recipe - The recipe object.
+	* @returns {HTMLElement} DOM element representing the recipe.
+	*/
 	function returnRecipeDOMElement(recipe) {
 		const recipeSlug = recipe.slug;
 		const recipeID = recipe.id;
@@ -111,13 +122,13 @@ export default function RenderRecipes(recipes) {
 	}
 
 	function getEightElements(recipes) {
-		const result = [];
-		for (let index = 0; index < 8; index+= 1) {
+		const frontpageRecipesArray = [];
+		for (let index = 0; index < 8; index += 1) {
 			if (index < recipes.length) {
-				result.push(recipes[index]);
+				frontpageRecipesArray.push(recipes[index]);
 			}
 		}
-		return result;
+		return frontpageRecipesArray;
 	}
 	/**
 	Renders HTML for each recipe in the recipes array
