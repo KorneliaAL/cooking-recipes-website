@@ -40,5 +40,6 @@ Studio deployed to:
 ## Github
 **GitHub repository**
 - `https://github.com/KorneliaAL/cooking-recipes-website.git`
+
 **GitHub project**
 - `https://github.com/users/KorneliaAL/projects/3`
