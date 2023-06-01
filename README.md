@@ -1,6 +1,15 @@
 # YumDish
 
-Welcome to the YumDish! This website is a collection of various recipes to help you explore and try out new dishes. Whether you're a seasoned chef or a beginner in the kitchen, you'll find a wide range of delicious recipes to suit your taste.
+YumDish is a website with a collection of various recipes. 
+
+## Website Content 
+
+On the front page, you can preview 8 recipes and try our exciting "Dinner Roulette" feature, which suggests a dinner option for you. Clicking on any recipe will display its detailed instructions and ingredients. Navigate to the following pages:
+**Recipes** 
+Page with all the recipes. Here you can search and filter through recipes
+
+**Favorites**
+Page that display your favorite recipes
 
 ## Getting Started
 
@@ -27,8 +36,10 @@ The Recipe Website is built using the following technologies:
 - Netlify (for deployment)
 
 ## MVP (Minimum Viable Product)
-
-In this MVP, the focus is on displaying a list of recipes and providing recipe details on separate pages. Each recipe page contains all the necessary information, such as ingredients, instructions, and cooking time, in a structured format. 
+- Recipe Listing Page: A page that displays a list of recipes in a grid or list format. Each recipe should include a photo, name and
+cooking time. 
+- Recipe Details: When a user clicks on a recipe, they can view the ingredients, cooking instructions, serving size and calories. 
+- Responsive Design: A website design that is optimized for desktop and mobile devices. Users should be able to access the website and browse recipes from any device.
 
 ## Access 
 Access the repository using:

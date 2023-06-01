@@ -43,7 +43,7 @@
 	padding: var(--gap-margin-medium);
 	width: 100%;
 	position: relative;
-	font-size: 25px;
+	font-size: var(--font-size-medium);
 }
 
 .main-header__link {
@@ -56,14 +56,14 @@
 }
 
 .main-header__link--active {
-	border-bottom: 3px solid;
+	border-bottom: var(--border-bottom-header);
 }
 
 .main-header__mobile-button button{
 	margin: var(--gap-margin-small);
 }
 
-@media screen and (min-width: 1040px) {
+@media screen and (min-width: 1024px) {
 	.main-header {
 		display: flex;
 		align-items: center;
@@ -80,7 +80,7 @@
 	}
 
 	.main-header__menu .main-header__link:hover {
-		border-bottom: 3px solid;
+		border-bottom: var(--border-bottom-header);
 	}
 
 	.main-header__mobile-button {
