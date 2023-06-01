@@ -8,11 +8,11 @@ On the front page, you can preview 8 recipes and try our exciting "Dinner Roulet
 
 **Recipes** 
 
-Page with all the recipes. Here you can search and filter through recipes
+ - Page with all the recipes. Here you can search and filter through recipes
 
 **Favorites**
 
-Page that display your favorite recipes
+- Page that display your favorite recipes
 
 ## Getting Started
 
