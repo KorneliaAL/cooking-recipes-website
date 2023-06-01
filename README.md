@@ -5,10 +5,13 @@ YumDish is a website with a collection of various recipes.
 ## Website Content 
 
 On the front page, you can preview 8 recipes and try our exciting "Dinner Roulette" feature, which suggests a dinner option for you. Clicking on any recipe will display its detailed instructions and ingredients. Navigate to the following pages:
+
 **Recipes** 
+
 Page with all the recipes. Here you can search and filter through recipes
 
 **Favorites**
+
 Page that display your favorite recipes
 
 ## Getting Started
