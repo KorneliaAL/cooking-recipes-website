@@ -2,6 +2,11 @@
 	margin-top: var(--gap-margin-medium);
 }
 
+.recipes-header {
+	font-size: var(--font-size-main-header-mobile);
+	margin: var(--gap-margin-medium) 0;
+}
+
 .recipes__list-element {
 	width: 17.5rem;
 	position: relative;
@@ -58,6 +63,13 @@
 }
 
 @media screen and (min-width: 1024px) {
+
+	.recipes-header {
+		font-size: var(--font-size-main-header-desktop);
+		text-align: center;
+		margin: var(--gap-margin-large) 0;
+	}
+
 	.recipes__list-element {
 		width: 100%;
 	}
